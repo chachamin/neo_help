@@ -14,24 +14,24 @@
 /* Esamanru */
 @font-face {
     font-family: 'Esamanru';
-    font-weight: 300; 
-    font-style: normal; 
+    font-weight: 300;
+    font-style: normal;
     src: url(font/esamanru-Light.woff2) format('woff2'),
          url(font/esamanru-Light.woff) format('woff'),
          url(font/esamanru-Light.ttf) format('ttf');
 }
 @font-face {
     font-family: 'Esamanru';
-    font-weight: 400; 
-    font-style: normal; 
+    font-weight: 400;
+    font-style: normal;
     src: url(font/esamanru-Medium.woff2) format('woff2'),
          url(font/esamanru-Medium.woff) format('woff'),
          url(font/esamanru-Medium.ttf) format('ttf');
 }
 @font-face {
     font-family: 'Esamanru';
-    font-weight: 700; 
-    font-style: normal; 
+    font-weight: 700;
+    font-style: normal;
     src: url(font/esamanru-Bold.woff2) format('woff2'),
          url(font/esamanru-Bold.woff) format('woff'),
          url(font/esamanru-Bold.ttf) format('ttf');
