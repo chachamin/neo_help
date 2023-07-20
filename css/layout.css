@@ -54,13 +54,24 @@
 /* 서브페이지 기본 */
 .inner {position: relative;width: 1400px;padding-right: 1.25rem;padding-left: 1.25rem;margin: 0 auto;box-sizing: border-box;}
 
+/* 서브페이지 header */
+.head_wrap {width: 100%;height: 120px;background: #1a72e7;}
+.neo_logo {height: 120px;position: absolute;top: 0;left: 0;}
+.img_logo a {height: 100%;display: inline-flex;align-items: center;}
+.img_logo .neo_logo {height: 120px;display: inline-flex;align-items: center;}
+.img_logo img {display: block;}
+
+
 /* 회원가입 */
 
 
 /* 에니메이션 */
 .fade {animation: fade_in 0.5s ease-in forwards;}
 
-@keyframes fadein {from {margin-top:-15px; opacity: 0; }to{ margin-top:0px; opacity: 1; }}
+@keyframes fadein {
+    from {margin-top:-15px; opacity: 0; }
+    to{ margin-top:0px; opacity: 1; }
+}
 
 @keyframes fade_in {
 	from {display: none; opacity: 0; transform: translateY(70px)}
