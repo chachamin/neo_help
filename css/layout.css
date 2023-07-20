@@ -36,6 +36,12 @@
 .main_wrap .right_box .aside .link_list li:last-child::after {display: none;}
 .main_wrap .right_box .aside .copy {margin-top: 7px;}
 
+/* 아이디·비밀번호 찾기 결과*/
+.main_wrap .login_box .find_result {background: rgba(26, 114, 231, .05);padding: 20px 20px 20px 45px;color: #424242;margin-top:10px;position: relative;}
+.main_wrap .login_box .find_result::after {content: '';display: block;width: 18px;height: 18px;border-radius: 50%;background: #eb0b01;position: absolute;top: 20px;left: 20px;}
+.main_wrap .login_box .find_result .blue {font-weight: normal;}
+.main_wrap .form_box .btn_wrap a {display: block;text-align: center;border-radius: 4px;padding: 12px;}
+
 /* 서브페이지 기본 */
 .inner {position: relative;width: 1400px;padding-right: 1.25rem;padding-left: 1.25rem;margin: 0 auto;box-sizing: border-box;}
 
