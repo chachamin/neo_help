@@ -250,9 +250,11 @@ ul.ulfl > li{float:left}
 .green{color:#009651 !important;}
 .mint{color:#008DB1 !important;}
 .blue{color:#2259D5 !important;}
+.blue_l{color:#0b3c7e !important;}
 .orange{color:#EE5B00 !important}
 .red{color:#D23834 !important}
-.bk{color:#111 !important} 
+.red_l{color:#d90a12 !important}
+.bk{color:#111 !important}
 
 /* 배경 */
 .bg_bk{background-color:#333 !important; color:#fff !important}
