@@ -124,10 +124,10 @@ ul.ulfl > li{float:left}
 
 /* 폰트속성 */
 .fn {font-weight:normal  !important;}
-.fb1 {font-weight:500}
-.fb2 {font-weight:600}
+.fb1 {font-weight:300}
+.fb2 {font-weight:400}
 .fb3 {font-weight:700}
-.fb4 {font-weight:800}
+
 
 .f_s {font-size:0.875rem !important}
 .f_l {font-size:1.25rem !important}
