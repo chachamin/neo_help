@@ -288,6 +288,9 @@ ul.ulfl > li{float:left}
 .loca_nav a:hover{background:#000;color:#fff;opacity:1}
 .loca_nav a:hover:before{border-color:#fff}
 
+/* IR */
+.ir_pm {display: block;overflow: hidden;font-size: 0;line-height: 0;text-indent: -9999px;}
+
 /* arrow,ico */
 .ico_ir{background:url('../img/main_ir.png') 0px 0px no-repeat;vertical-align:middle;}
 

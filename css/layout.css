@@ -53,13 +53,26 @@
 
 /* 서브페이지 기본 */
 .inner {position: relative;width: 1400px;padding-right: 1.25rem;padding-left: 1.25rem;margin: 0 auto;box-sizing: border-box;}
+#container {padding: 110px 0;}
 
 /* 서브페이지 header */
 .head_wrap {width: 100%;height: 120px;background: #1a72e7;}
-.neo_logo {height: 120px;position: absolute;top: 0;left: 0;}
+.img_logo {height: 120px;position: absolute;top: 0;left: 0;}
 .img_logo a {height: 100%;display: inline-flex;align-items: center;}
 .img_logo .neo_logo {height: 120px;display: inline-flex;align-items: center;}
 .img_logo img {display: block;}
+.text_logo {width: 100%;height: 120px;padding-top: 45px;}
+.text_logo a {display: block; color: #fff;font-size: 2.188rem;text-align: center;}
+.menu_r {position: absolute;top: 50%;transform: translateY(-50%);right: 0;}
+.menu_r ul li:last-child {margin-right: 0;}
+.menu_r .round {width: 40px;height: 40px;border: 1px solid #fff;border-radius: 50%;margin-right: 10px;overflow: hidden;}
+.menu_r .round a {width: 100%; height: 100%; display: block;}
+
+/* 서브페이지 - 페이지 타이틀 */
+.pg_title_area .tit_box .eng_t {font-size: 1.875rem;color: #727272;}
+.pg_title_area .tit_box .eng_t .add_tDot {position: relative;}
+.pg_title_area .tit_box .eng_t .add_tDot::after {content: '';display: block;width: 15px;height: 15px;background: #c3d8fe;border-radius: 50%;position: absolute;top: 0;right: -7px;z-index: -1;}
+.pg_title_area .tit_box .tit {font-size: 2.5rem;font-weight: 400;}
 
 
 /* 회원가입 */
