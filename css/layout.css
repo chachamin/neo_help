@@ -78,6 +78,26 @@
 /* 회원가입 */
 .pg_title_area .step_box {position: absolute;bottom: 22px;right: 0;}
 .pg_title_area .step_box ul {display: flex;}
+.pg_title_area .step_box ul li {margin-right: 20px;}
+.pg_title_area .step_box ul li:last-child {margin-right: 0;}
+
+.content_join {padding:50px 0;}
+.content_join .content_notice {font-size: 1.125rem;}
+.content_join .content_box {margin-top: 25px;width: 100%;padding: 40px;box-shadow: 0 14px 28px rgba(0, 0, 0, 0.07), 0 10px 28px rgba(0, 0, 0, 0.07);}
+.content_join .content_box .sub_tit {padding-bottom: 10px;border-bottom: 1px solid #ddd;display: flex;align-items: center;}
+.content_join .content_box .sub_tit p {font-size: 1.25rem;font-weight: 400;}
+.content_join .policy_box {padding:20px;}
+.policy_box .policy_text h4 {font-size: 1.125rem;margin-top: 10px;}
+.policy_box .policy_text p {font-size: 0.938rem;padding-left: 15px;margin-top: 5px;}
+.policy_box .policy_text .bg_gray {margin-top: 5px;padding: 15px;font-size: 0.938rem;}
+.policy_box .policy_text .bg_gray ul li {margin: 3px 0;position: relative;padding-left: 10px;}
+.policy_box .policy_text .bg_gray ul li::after {content: '';display: block;width: 5px;height: 5px;border-radius: 50%;background: #929292;position: absolute;top: 6px;left: 0;}
+.policy_box .agree_wrap {margin-top: 20px;padding-top: 20px;border-top: 1px dashed #ddd; justify-content: center;}
+.policy_box .agree_wrap p {margin-right: 20px;padding-top: 2px}
+.policy_box .agree_wrap .radio_wrap
+
+
+
 
 /* 에니메이션 */
 .fade {animation: fade_in 0.5s ease-in forwards;}

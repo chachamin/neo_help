@@ -253,8 +253,9 @@ ul.ulfl > li{float:left}
 .blue_l{color:#0b3c7e !important;}
 .orange{color:#EE5B00 !important}
 .red{color:#D23834 !important}
-.red_l{color:#d90a12 !important}
+.red_l{color:#FB001E !important}
 .bk{color:#111 !important}
+
 
 /* 배경 */
 .bg_bk{background-color:#333 !important; color:#fff !important}
@@ -265,7 +266,7 @@ ul.ulfl > li{float:left}
 .bg_dgray{background-color:#2d3035 !important; color:#fff !important}
 .bg_dgray2{background-color:#6a7184 !important; color:#fff !important}
 .bg_green{background-color:#4caf50 !important;color:#fff !important}
-.bg_blue{background-color:#1a72e7 !important;color:#fff !important}
+.bg_blue{background-color:#0073EA !important;color:#fff !important}
 .bg_mint{background-color:#008DB1 !important;color:#fff !important}
 .bg_orange{background-color:#ff4800 !important;color:#fff !important}
 .bg_red{background-color:#d10b13 !important;color:#fff !important}
