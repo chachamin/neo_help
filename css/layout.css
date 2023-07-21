@@ -69,14 +69,15 @@
 .menu_r .round a {width: 100%; height: 100%; display: block;}
 
 /* 서브페이지 - 페이지 타이틀 */
+.pg_title_area .tit_wrap {position: relative;padding-bottom: 15px;border-bottom: 1px solid #d7d7d7;}
 .pg_title_area .tit_box .eng_t {font-size: 1.875rem;color: #727272;}
 .pg_title_area .tit_box .eng_t .add_tDot {position: relative;}
 .pg_title_area .tit_box .eng_t .add_tDot::after {content: '';display: block;width: 15px;height: 15px;background: #c3d8fe;border-radius: 50%;position: absolute;top: 0;right: -7px;z-index: -1;}
-.pg_title_area .tit_box .tit {font-size: 2.5rem;font-weight: 400;}
-
+.pg_title_area .tit_box .tit {font-size: 2.5rem;font-weight: 400;color: #0b3c7e;}
 
 /* 회원가입 */
-
+.pg_title_area .step_box {position: absolute;bottom: 22px;right: 0;}
+.pg_title_area .step_box ul {display: flex;}
 
 /* 에니메이션 */
 .fade {animation: fade_in 0.5s ease-in forwards;}
