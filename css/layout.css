@@ -79,7 +79,12 @@
 .fbox_left .address ul li:last-child {margin-right: 0;}
 .fbox_left .address ul li:last-child::after {display: none;}
 .fbox_right .user_link {margin-right: 70px;}
-.fbox_right ul li {font-size:0.938rem;}
+.fbox_right ul li {margin-bottom: 5px;}
+.fbox_right ul li:last-child {margin-bottom: 0;}
+.fbox_right ul li .btn {font-size:0.938rem;padding: 0;font-weight: 300 !important;}
+.fbox_right .f_tit {padding-top: 19px;margin-bottom: 25px;}
+.fbox_right .contact .blue_l {font-size: 1.438rem;font-weight: 400;}
+.fbox_right .contact .blue_l.mt16 {margin-bottom: 2px;}
 
 /* 서브페이지 - 페이지 타이틀 */
 .pg_title_area .tit_wrap {position: relative;padding-bottom: 15px;border-bottom: 1px solid #d7d7d7;}
@@ -94,12 +99,14 @@
 .pg_title_area .step_box ul li {margin-right: 20px;}
 .pg_title_area .step_box ul li:last-child {margin-right: 0;}
 
+/* 회원가입 - 개인정보 동의*/
 .content_join {padding:50px 0;}
 .content_join .content_notice {font-size: 1.125rem;}
 .content_join .content_box {margin-top: 25px;width: 100%;padding: 40px;box-shadow: 0 14px 28px rgba(0, 0, 0, 0.07), 0 10px 28px rgba(0, 0, 0, 0.07);}
 .content_join .content_box .sub_tit {padding-bottom: 10px;border-bottom: 1px solid #ddd;display: flex;align-items: center;}
 .content_join .content_box .sub_tit p {font-size: 1.25rem;font-weight: 400;}
-.content_join .content_box .sub_tit .policy_all {border: 1px solid #ddd;padding: 7px 20px 7px 10px;margin-left: 15px;font-size: 0.875rem;border-radius: 5px;}
+.content_join .content_box .sub_tit .policy_all {border: 1px solid #ddd;margin-left: 15px;font-size: 0.875rem;border-radius: 5px;background: #212121;color:#fff;}
+.content_join .content_box .sub_tit .policy_all .pt1 {padding-top: 1px;}
 .content_join .policy_box {padding:20px;}
 .policy_box .policy_text h4 {font-size: 1.125rem;margin-top: 10px;}
 .policy_box .policy_text p {font-size: 0.938rem;padding-left: 15px;margin-top: 5px;}
@@ -112,6 +119,15 @@
 .content_join .content_box .agree_wrap .radio_wrap span:last-child {margin-right:0;}
 .content_join .content_box .btn_wrap {text-align: right;}
 .content_join .content_box .btn_wrap a {padding: 10px 15px;border-radius: 5px;}
+
+/* 회원가입 - 정보입력*/
+.content_join .content_box .sub_tit .ad_t {margin-left: 5px;font-size: 0.875rem;padding-top: 5px;font-weight: 300;display: flex;}
+.content_join .form_list {padding: 20px;}
+.content_join .form_list li {margin-bottom: 10px;}
+.content_join .form_list .tit {line-height: 45px; width: 13%;}
+.content_join .form_list .form_input {width: 34.5%;}
+.content_join .form_list .form_input input{width: 100%;}
+
 
 
 

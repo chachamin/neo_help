@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +15,12 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/common.js"></script>
 </head>
+
 <body>
     <div id="skip_navi">
         <a href="#container">본문 바로가기</a>
-		<a href="#navi">주메뉴 바로가기</a>
-	</div>
+        <a href="#navi">주메뉴 바로가기</a>
+    </div>
 
     <div class="wrapper"">
         <header id="herader">
@@ -27,7 +29,7 @@
                     <h1 class="img_logo">
                         <a href="#none">
                             <div class="neo_logo">
-                                <img src="" alt="NEO New E-information Organization">
+                                <img src="images/neo_logo_w.png" alt="NEO New E-information Organization">
                             </div>
                         </a>
                     </h1>
@@ -60,13 +62,15 @@
                 <div class="inner">
                     <div class="tit_wrap">
                         <div class="tit_box">
-                            <div class="typo eng_t"><p><span class="add_tDot">Join Us</span></p></div>
+                            <div class="typo eng_t">
+                                <p><span class="add_tDot">Join Us</span></p>
+                            </div>
                             <div class="tit">회원가입</div>
                         </div>
                         <div class="step_box">
                             <ul>
-                                <li class="red_l">가입약관동의</li>
-                                <li>정보입력</li>
+                                <li>가입약관동의</li>
+                                <li class="red_l">정보입력</li>
                                 <li>가입완료</li>
                             </ul>
                         </div>
@@ -75,50 +79,164 @@
             </div>
             <div class="inner">
                 <div class="content_join">
-                    <div class="content_notice">회원가입을 위해 <span class="red_l">개인정보 수집·이용 정책에 동의</span>해주세요.</div>
+                    <div class="content_notice">회원가입을 위해 <span class="red_l">회원 정보를 입력</span>해주세요.</div>
                     <div class="content_box">
                         <div class="sub_tit">
-                            <p>개인정보 수집·이용 정책</p>
-                            <a href="#none">전문보기</a>
+                            <p>정보입력</p>
+                            <div class="ad_t">(<span class="required">필수</span>필수입력사항)</div>
                         </div>
-                        <div class="policy_box">
-                            <div class="policy_text">
-                                <h4>개인정보의 수집 및 이용 동의</h4>
-                                <p class="mb20">네오(이하 ‘회사’)가 수집 및 이용하는 본인의 개인정보는 『정보통신망이용촉진 및 정보보호 등에 관한 법률』에 따라 본인의 동의를 얻어야 하는 정보입니다. 본인은 네오의 개인정보 수집, 이용에 동의합니다.</p>
-                                <h4>1. 수집하는 개인정보의 항목</h4>
-                                <div class="bg_gray">
-                                    <ul>
-                                        <li><span>입력항목 </span> : 이름, 연락처, 이메일, 회사명, 직책 등</li>
-                                        <li><span>자동수집항목 </span> : IP Address, 서비스 이용기록 등</li>
-                                    </ul>
-                                </div>
-                                <h4>2. 개인정보의 수집 및 이용 목적</h4>
-                                <p>수집한 개인정보는 다음의 목적을 위해 활용합니다.</p>
-                                <div class="bg_gray">
-                                    <ul>
-                                        <li>고객문의 시 회사관련 문의, 서비스 문의, 투자 문의, 채용 문의 등에 대한 정보 제공 및 안내</li>
-                                    </ul>
-                                </div>
-                                <h4>3. 개인정보의 보유 및 이용기간</h4>
-                                <p>정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다.단, 다음의 정보에 대해서는 아래의 이유로 명시한 기간 동안 보존합니다.</p>
-                                <div class="bg_gray">
-                                    <ul>
-                                        <li>모든 개인정보 입력항목에 대해서 12개월간 보유하며, 이후 모든 정보는 파기 (단, 성명 및 이메일은 문의내역 관리를 위해 36개월간 보관)</li>
-                                        <li>성명과 이메일 정보에 대하여 파기를 원하는 개인은 <span>shkim@neoitc.co.kr</span> 으로 요청주시면 바로 처리하겠습니다.</li>
-                                        <li>기타 개인정보에 대하여 보유기간을 회원에게 개별적으로 사전 동의를 받은 경우에는 약속한 보유기간 동안 보유합니다.</li>
-                                    </ul>
-                                </div>
+                        <div class="user_info">
+                            <div class="form_list">
+                                <ul>
+                                    <li>
+                                        <div class="dp_flex">
+                                            <div class="tit">아이디<span class="required">필수</span></div>
+                                            <div class="form_input">
+                                                <input type="text" placeholder="아이디를 입력해 주세요">
+                                            </div>
+                                            <div class="check_btn">
+                                                <input class="btn btn_navy" type="button" id="idck" value="아이디중복체크">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dp_flex">
+                                            <div class="tit">비밀번호<span class="required">필수</span></div>
+                                            <div class="form_input">
+                                                <input type="text" placeholder="비밀번호를 입력해 주세요">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dp_flex">
+                                            <div class="tit">비밀번호 확인<span class="required">필수</span></div>
+                                            <div class="form_input">
+                                                <input type="text" placeholder="비밀번호를 다시 한번 입력해 주세요">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dp_flex">
+                                            <div class="tit">기관명<span class="required">필수</span></div>
+                                            <div class="form_input">
+                                                <input type="text" placeholder="기관명을 입력해 주세요">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dp_flex">
+                                            <div class="tit">홈페이지<span class="required">필수</span></div>
+                                            <div class="form_input">
+                                                <input type=" text" placeholder="홈페이지를 입력해 주세요">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dp_flex">
+                                            <div class="tit">담당자명<span class="required">필수</span></div>
+                                            <div class="form_input">
+                                                <input type=" text" placeholder="담당자명을 입력해 주세요">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dp_flex">
+                                            <div class="tit">E-MAIL<span class="required">필수</span></div>
+                                            <div class="form_input">
+                                                <input type="text" placeholder="담당자 이메일을 입력해 주세요">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dp_flex">
+                                            <div class="tit">연락처<span class="required">필수</span></div>
+                                            <div class="form_input">
+                                                <label for="tel_num_1" class="sound_only">연락처앞자리</label>
+                                                <select id="tel_num_1" name="m_tel11" title="연락처1" class="input_tel2">
+                                                    <option value="">번호선택</option>
+                                                    <option value="010">010</option>
+                                                    <option value="011">011</option>
+                                                    <option value="019">019</option>
+                                                    <option value="02">02</option>
+                                                    <option value="031">031</option>
+                                                    <option value="032">032</option>
+                                                    <option value="033">033</option>
+                                                    <option value="041">041</option>
+                                                    <option value="042">042</option>
+                                                    <option value="043">043</option>
+                                                    <option value="044">044</option>
+                                                    <option value="051">051</option>
+                                                    <option value="052">052</option>
+                                                    <option value="053">053</option>
+                                                    <option value="054">054</option>
+                                                    <option value="055">055</option>
+                                                    <option value="061">061</option>
+                                                    <option value="062">062</option>
+                                                    <option value="063">063</option>
+                                                    <option value="064">064</option>
+                                                    <option value="070">070</option>
+                                                </select>
+                                                &nbsp;-&nbsp;
+                                                <label for="tel_num_2" class="sound_only">연락처두번째</label>
+                                                <input type="text" id="tel_num_2" name="m_tel12" title="연락처2"
+                                                    maxlength="4" placeholder="두번째 번호" class="input_tel2" value="">
+                                                &nbsp;-&nbsp;
+                                                <label for="tel_num_3" class="sound_only">연락처뒷자리</label>
+                                                <input type="text" id="tel_num_3" name="m_tel13" title="연락처3"
+                                                    maxlength="4" placeholder="마지막 번호" class="input_tel2" value="">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dp_flex">
+                                            <div class="tit">FAX</div>
+                                            <div class="form_input">
+                                                <label for="fax_local" class="sound_only">지역번호</label>
+                                                <select id="fax_local" name="m_tel21" title="연락처1" class="input_tel2">
+                                                    <option value="">지역번호</option>
+                                                    <option value="010">010</option>
+                                                    <option value="011">011</option>
+                                                    <option value="019">019</option>
+                                                    <option value="02">02</option>
+                                                    <option value="031">031</option>
+                                                    <option value="032">032</option>
+                                                    <option value="033">033</option>
+                                                    <option value="041">041</option>
+                                                    <option value="042">042</option>
+                                                    <option value="043">043</option>
+                                                    <option value="044">044</option>
+                                                    <option value="051">051</option>
+                                                    <option value="052">052</option>
+                                                    <option value="053">053</option>
+                                                    <option value="054">054</option>
+                                                    <option value="055">055</option>
+                                                    <option value="061">061</option>
+                                                    <option value="062">062</option>
+                                                    <option value="063">063</option>
+                                                    <option value="064">064</option>
+                                                    <option value="070">070</option>
+                                                </select>
+                                                &nbsp;-&nbsp;
+                                                <label for="fax_num_2" class="sound_only">fax번호앞자리</label>
+                                                <input type="text" id="fax_num_2" name="m_tel22" title="fax번호앞자리"
+                                                    placeholder="두번째 번호" maxlength="4" class="input_tel2" value="">
+                                                &nbsp;-&nbsp;
+                                                <label for="fax_num_3" class="sound_only">fax번호뒷자리</label>
+                                                <input type="text" id="fax_num_3" name="m_tel23" title="fax번호뒷자리"
+                                                    placeholder="마지막 번호" maxlength="4" class="input_tel2" value="">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="agree_wrap dp_flex">
-                            <p><span class="red_l">(필수)</span> 개인정보의 수집 및 이용</p>
-                            <div class="dp_flex radio_wrap">
-                                <span class="radio"><input type="radio" name="agree" value="ok" id="agreeY"><label for="agreeY">동의</label></span>
-                                <span class="radio"><input type="radio" name="agree" value="no" id="agreeN"><label for="agreeN">비동의</label></span>
-                            </div>
+                        <div class="notice_box">
+                            <p>네오(NEO) 헬프데스크는 회원 전용 서비스로 회원가입 완료 후 관리자의 승인을 거쳐 로그인이 가능합니다.</p>
+                            <p>회원가입 완료 후 고객센터 (<a href="#none">062-522-0234</a>)로 연락주시면 더욱 빠른 처리가 가능합니다.</p>
                         </div>
-                        <div class="btn_wrap">
-                            <a href="#none" class="bg_blue">다음단계</a>
+                        <div class="btn_wrap join_step">
+                            <a href="#none" class="prev">이전단계</a>
+                            <a href="#none" class="bg_blue next">다음단계</a>
                         </div>
                     </div>
                 </div>
@@ -127,35 +245,45 @@
 
         <footer id="footer">
             <div class="inner">
-                <div class="dp_flex">
-                    <div class="neo_info">
-                        <div class="flogo">
-                            <img src="" alt="NEO New E-information Organization">
+                <div class="dp_flex footer_wrap">
+                    <div class="fbox_left">
+                        <div class="neo_info">
+                            <div class="flogo">
+                                <img src="images/flogo_c.png" alt="NEO New E-information Organization">
+                            </div>
+                            <div class="address">
+                                <p>광주광역시 서구 하남대로 698(동천동 627번지) 일군타워 7층 701호 (우편번호 61903)</p>
+                                <ul>
+                                    <li><a href="#none">대표전화 062-522-0234</a></li>
+                                    <li>팩스 062-522-0238</li>
+                                    <li>사업자등록번호 243-07-00246</li>
+                                </ul>
+                                <ul class="mtb30">
+                                    <li><a href="#none">개인정보처리방침</a></li>
+                                    <li><a href="#none">이메일주소무단수집거부</a></li>
+                                    <li><a href="#none">회사소개</a></li>
+                                    <li><a href="#none">오시는길</a></li>
+                                </ul>
+                                <p class="blue_l">copyright @ NEO. all rights reserved.</p>
+                            </div>
                         </div>
-                        <div class="address">
-                            <p>광주광역시 서구 하남대로 698(동천동 627번지) 일군타워 7층 701호 (우편번호 61903)</p>
+                    </div>
+                    <div class="fbox_right dp_flex">
+                        <div class="user_link">
+                            <p class="f_tit">For User</p>
                             <ul>
-                                <li><a href="#none">대표전화 062-522-0234</a></li>
-                                <li>팩스 062-522-0238</li>
-                                <li>사업자등록번호 243-07-00246</li>
+                                <li><a href="#" target="_blank" title="새창열기" class="btn">포트확인<span class="ico_blank_b"></span></a></li>
+                                <li><a href="#" target="_blank" title="새창열기" class="btn">통합진단클리닉<span class="ico_blank_b"></span></a></li>
+                                <li><a href="#" target="_blank" title="새창열기" class="btn">W3C<span class="ico_blank_b"></span></a></li>
+                                <li><a href="#" target="_blank" title="새창열기" class="btn">표준약관양식<span class="ico_blank_b"></span></a></li>
                             </ul>
-                            <p class="blue_l">COPYRIGHT @ NEO. ALL RIGHTS RESERVED.</p>
                         </div>
-                    </div>
-                    <div class="user_link">
-                        <p>For User</p>
-                        <ul>
-                            <li><a href="#" target="_blank" title="새창열기"><span>포트확인</span></a></li>
-                            <li><a href="#" target="_blank" title="새창열기"><span>통합진단클리닉</span></a></li>
-                            <li><a href="#" target="_blank" title="새창열기"><span>W3C</span></a></li>
-                            <li><a href="#" target="_blank" title="새창열기"><span>표준약관양식</span></a></li>
-                        </ul>
-                    </div>
-                    <div class="contact">
-                        <p>Contact Us</p>
-                        <p>shkim@neoitc.co.kr</p>
-                        <p>062-522-0234</p>
-                        <p>평일 09:00 ~ 18:00 (주말·공휴일 휴무)</p>
+                        <div class="contact">
+                            <p class="f_tit">Contact Us</p>
+                            <p class="blue_l">shkim@neoitc.co.kr</p>
+                            <p class="blue_l mt16">062-522-0234</p>
+                            <p>평일 09:00 ~ 18:00 (주말·공휴일 휴무)</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -163,4 +291,5 @@
 
     </div>
 </body>
+
 </html>
