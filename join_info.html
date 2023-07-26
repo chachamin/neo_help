@@ -65,7 +65,7 @@
                             <div class="typo eng_t">
                                 <p><span class="add_tDot">Join Us</span></p>
                             </div>
-                            <div class="tit">회원가입</div>
+                            <div class="tit"><span>회원가입</span></div>
                         </div>
                         <div class="step_box">
                             <ul>
@@ -86,16 +86,16 @@
                             <div class="ad_t">(<span class="required">필수</span>필수입력사항)</div>
                         </div>
                         <div class="user_info">
-                            <div class="form_list">
-                                <ul>
-                                    <li>
+                            <div class="list_wrap">
+                                <ul class="dp_flex info_list">
+                                    <li class="w100p">
                                         <div class="dp_flex">
                                             <div class="tit">아이디<span class="required">필수</span></div>
                                             <div class="form_input">
                                                 <input type="text" placeholder="아이디를 입력해 주세요">
                                             </div>
                                             <div class="check_btn">
-                                                <input class="btn btn_navy" type="button" id="idck" value="아이디중복체크">
+                                                <input class="btn" type="button" id="idck" value="아이디중복체크">
                                             </div>
                                         </div>
                                     </li>
@@ -148,11 +148,11 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="dp_flex">
+                                        <div class="dp_flex num_input">
                                             <div class="tit">연락처<span class="required">필수</span></div>
-                                            <div class="form_input">
+                                            <div class="form_input dp_flex">
                                                 <label for="tel_num_1" class="sound_only">연락처앞자리</label>
-                                                <select id="tel_num_1" name="m_tel11" title="연락처1" class="input_tel2">
+                                                <select id="tel_num_1" name="m_tel11" title="연락처1" class="input_tel1">
                                                     <option value="">번호선택</option>
                                                     <option value="010">010</option>
                                                     <option value="011">011</option>
@@ -176,23 +176,23 @@
                                                     <option value="064">064</option>
                                                     <option value="070">070</option>
                                                 </select>
-                                                &nbsp;-&nbsp;
+                                                <span>-</span>
                                                 <label for="tel_num_2" class="sound_only">연락처두번째</label>
                                                 <input type="text" id="tel_num_2" name="m_tel12" title="연락처2"
-                                                    maxlength="4" placeholder="두번째 번호" class="input_tel2" value="">
-                                                &nbsp;-&nbsp;
+                                                    maxlength="4" placeholder="두번째 번호" class="input_tel2 add_bar" value="">
+                                                <span>-</span>
                                                 <label for="tel_num_3" class="sound_only">연락처뒷자리</label>
                                                 <input type="text" id="tel_num_3" name="m_tel13" title="연락처3"
-                                                    maxlength="4" placeholder="마지막 번호" class="input_tel2" value="">
+                                                    maxlength="4" placeholder="마지막 번호" class="input_tel3 add_bar" value="">
                                             </div>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="dp_flex">
+                                        <div class="dp_flex num_input">
                                             <div class="tit">FAX</div>
-                                            <div class="form_input">
+                                            <div class="form_input dp_flex">
                                                 <label for="fax_local" class="sound_only">지역번호</label>
-                                                <select id="fax_local" name="m_tel21" title="연락처1" class="input_tel2">
+                                                <select id="fax_local" name="m_tel21" title="연락처1" class="input_tel1">
                                                     <option value="">지역번호</option>
                                                     <option value="010">010</option>
                                                     <option value="011">011</option>
@@ -216,14 +216,14 @@
                                                     <option value="064">064</option>
                                                     <option value="070">070</option>
                                                 </select>
-                                                &nbsp;-&nbsp;
+                                                <span>-</span>
                                                 <label for="fax_num_2" class="sound_only">fax번호앞자리</label>
                                                 <input type="text" id="fax_num_2" name="m_tel22" title="fax번호앞자리"
-                                                    placeholder="두번째 번호" maxlength="4" class="input_tel2" value="">
-                                                &nbsp;-&nbsp;
+                                                    placeholder="두번째 번호" maxlength="4" class="input_tel2 add_bar" value="">
+                                                <span>-</span>
                                                 <label for="fax_num_3" class="sound_only">fax번호뒷자리</label>
                                                 <input type="text" id="fax_num_3" name="m_tel23" title="fax번호뒷자리"
-                                                    placeholder="마지막 번호" maxlength="4" class="input_tel2" value="">
+                                                    placeholder="마지막 번호" maxlength="4" class="input_tel3 add_bar" value="">
                                             </div>
                                         </div>
                                     </li>
@@ -235,7 +235,7 @@
                             <p>회원가입 완료 후 고객센터 (<a href="#none">062-522-0234</a>)로 연락주시면 더욱 빠른 처리가 가능합니다.</p>
                         </div>
                         <div class="btn_wrap join_step">
-                            <a href="#none" class="prev">이전단계</a>
+                            <a href="#none" class="prev bg_bk_bo">이전단계</a>
                             <a href="#none" class="bg_blue next">다음단계</a>
                         </div>
                     </div>
