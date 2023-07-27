@@ -67,6 +67,7 @@
 .menu_r ul li:last-child {margin-right: 0;}
 .menu_r .round {width: 40px;height: 40px;border: 1px solid #fff;border-radius: 50%;margin-right: 10px;overflow: hidden;}
 .menu_r .round a {width: 100%; height: 100%; display: block;}
+.menu_r .round_box a {display: inline-flex;height: 40px;align-items: center;background: #FFC600;color: #1a72e7;padding: 0 20px;border-radius: 20px;}
 
 /* 서브페이지 footer */
 #footer {width: 100%;border-top: 5px solid #d7d7d7;}

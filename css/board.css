@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+.board_search .search_form .search_input_wrap, .board_search .search_form {display: inline-block; position: relative;}
+
+
+.bo_list_wrap{padding: 50px 0;}
+
+.search_wrap .notice {display: inline-block;height: 45px;line-height: 45px;font-size: 1.125rem;}
+.search_form.dp_flex {background: #F6F6F6;padding: 0 10px;border-radius: 30px;overflow: hidden;}
+.search_form .empty_bak {background-color: transparent;border: none;}
+
+.bo_list {padding: 25px 0;}
+.bo_list .box_type > li {width: 100%;border: 1px solid #ddd;margin-bottom: 15px;position: relative;padding: 30px 95px ;}
+
