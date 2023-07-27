@@ -11,4 +11,9 @@
 
 .bo_list {padding: 25px 0;}
 .bo_list .box_type > li {width: 100%;border: 1px solid #ddd;margin-bottom: 15px;position: relative;padding: 30px 95px ;}
-
+.bo_list .box_type > li .list_num {position: absolute;top: 32px;left: 35px;}
+.bo_list .box_type .tit_box {padding-bottom: 15px;border-bottom: 1px solid #ddd;}
+.bo_list .box_type .tit {font-size: 1.438rem;}
+.bo_list .box_type .info_box {padding-top: 15px;}
+.bo_list .box_type .info_box li {margin-right: 35px;}
+.bo_list .box_type .info_box li span {margin-left: 10px;}
