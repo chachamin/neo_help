@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네오(NEO) 헬프데스크</title>
+
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="css/board.css" />
+    <link rel="stylesheet" type="text/css" href="css/rspnsv.css" />
+    <link rel="stylesheet" type="text/css" href="css/font.css" />
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+</head>
+
+<body>
+    <div id="skip_navi">
+        <a href="#container">본문 바로가기</a>
+        <a href="#navi">주메뉴 바로가기</a>
+    </div>
+
+    <div class="wrapper"">
+        <header id="herader">
+            <div class="head_wrap">
+                <div class="inner">
+                    <h1 class="img_logo">
+                        <a href="#none">
+                            <div class="neo_logo">
+                                <img src="images/neo_logo_w.png" alt="NEO New E-information Organization">
+                            </div>
+                        </a>
+                    </h1>
+                    <div class="text_logo">
+                        <a href="#none">
+                            <p class="typo">HELP DESK</p>
+                        </a>
+                    </div>
+                    <div id="gnb" class="menu_r">
+                        <h2 id="navi" class="sound_only">네오 헬프테스크 주메뉴</h2>
+                        <ul class="dp_flex">
+                            <li class="round">
+                                <a href="#none" class="join">
+                                    <span class="ir_pm">회원정보수정</span>
+                                </a>
+                            </li>
+                            <li class="round">
+                                <a href="#none" class="sign_out">
+                                    <span class="ir_pm">로그아웃</span>
+                                </a>
+                            </li>
+                            <!-- <li class="round">
+                                <a href="#none" class="sign_in">
+                                    <span class="ir_pm">로그인</span>
+                                </a>
+                            </li> -->
+                            <li class="round_box">
+                                <a href="#none" class="register">
+                                    <p>유지보수 등록하기</p>
+                                    <img src="/images/write_ico.png">
+                                </a>
+                            </li>
+                            <!-- <li class="round_box">
+                                <a href="#none" class="statistics">
+                                    <p>유지보수 통계</p>
+                                    <img src="/images/graph.png">
+                                </a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="container">
+            <div class="pg_title_area">
+                <div class="inner">
+                    <div class="tit_wrap">
+                        <div class="tit_box">
+                            <div class="typo eng_t">
+                                <p><span class="add_tDot">Member Information Management</span></p>
+                            </div>
+                            <div class="tit"><span>회원정보 수정</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="inner">
+                <div class="bo_list_wrap">
+                    <div class="search_wrap clearfix">
+                        <div class="notice fl">
+                            총<span class="red_l">43</span>명의 회원이 등록되어 있습니다.
+                        </div>
+                        <div class="search_form dp_flex fr">
+                            <select name="keyField" id="select" title="검색구분 선택" class="empty_bak">
+                                <option value="" selected="select">전체검색</option>
+                                <option value="기관명" >기관명</option>
+                                <option value="성명" >성명</option>
+                            </select>
+                            <div class="search_input_wrap">
+                                <input name="keyWord" value type="test" placeholder="검색어를 입력하세요" title="검색할 내용을 입력하세요" class="empty_bak">
+                                <button type="submit" class="btn_search empty_bak">검색</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bo_list">
+                        <table class="lst_table">
+                            <caption>네오 헬프데스크에 가입된 회원정보를 제공하는 리스트입니다.</caption>
+                            <thead>
+                                <tr>
+                                    <th>등급</th>
+                                    <th>기관명</th>
+                                    <th>아이디</th>
+                                    <th>성명</th>
+                                    <th>연락처</th>
+                                    <th>최종로그인</th>
+                                    <th>승인</th>
+                                    <th>기능</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>관리자</td>
+                                    <td>네오(NEO)</td>
+                                    <td>neomaster</td>
+                                    <td>유지보수관리자</td>
+                                    <td>062-522-0234</td>
+                                    <td>2023-08-04 15:13:35</td>
+                                    <td>승인완료</td>
+                                    <td>
+                                        <div class="btn_box">
+                                            <a href="#">수정</a>
+                                            <a href="#">삭제</a>
+                                            <a href="#">비밀번호리셋</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>관리자</td>
+                                    <td>네오(NEO)</td>
+                                    <td>neomaster</td>
+                                    <td>유지보수관리자</td>
+                                    <td>062-522-0234</td>
+                                    <td>2023-08-04 15:13:35</td>
+                                    <td>승인대기</td>
+                                    <td>
+                                        <div class="btn_box">
+                                            <a href="#">수정</a>
+                                            <a href="#">삭제</a>
+                                            <a href="#">비밀번호리셋</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>관리자</td>
+                                    <td>네오(NEO)</td>
+                                    <td>neomaster</td>
+                                    <td>유지보수관리자</td>
+                                    <td>062-522-0234</td>
+                                    <td>2023-08-04 15:13:35</td>
+                                    <td>승인대기</td>
+                                    <td>
+                                        <div class="btn_box">
+                                            <a href="#">수정</a>
+                                            <a href="#">삭제</a>
+                                            <a href="#">비밀번호리셋</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>관리자</td>
+                                    <td>네오(NEO)</td>
+                                    <td>neomaster</td>
+                                    <td>유지보수관리자</td>
+                                    <td>062-522-0234</td>
+                                    <td>2023-08-04 15:13:35</td>
+                                    <td>승인대기</td>
+                                    <td>
+                                        <div class="btn_box">
+                                            <a href="#">수정</a>
+                                            <a href="#">삭제</a>
+                                            <a href="#">비밀번호리셋</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>관리자</td>
+                                    <td>네오(NEO)</td>
+                                    <td>neomaster</td>
+                                    <td>유지보수관리자</td>
+                                    <td>062-522-0234</td>
+                                    <td>2023-08-04 15:13:35</td>
+                                    <td>승인완료</td>
+                                    <td>
+                                        <div class="btn_box">
+                                            <a href="#">수정</a>
+                                            <a href="#">삭제</a>
+                                            <a href="#">비밀번호리셋</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>관리자</td>
+                                    <td>네오(NEO)</td>
+                                    <td>neomaster</td>
+                                    <td>유지보수관리자</td>
+                                    <td>062-522-0234</td>
+                                    <td>2023-08-04 15:13:35</td>
+                                    <td>승인완료</td>
+                                    <td>
+                                        <div class="btn_box">
+                                            <a href="#">수정</a>
+                                            <a href="#">삭제</a>
+                                            <a href="#">비밀번호리셋</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>관리자</td>
+                                    <td>네오(NEO)</td>
+                                    <td>neomaster</td>
+                                    <td>유지보수관리자</td>
+                                    <td>062-522-0234</td>
+                                    <td>2023-08-04 15:13:35</td>
+                                    <td>승인완료</td>
+                                    <td>
+                                        <div class="btn_box">
+                                            <a href="#">수정</a>
+                                            <a href="#">삭제</a>
+                                            <a href="#">비밀번호리셋</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btn_box t_a_r">
+                        <a href="#" class="write">유지보수 등록하기</a>
+                    </div>
+                    <div class="pagination">
+                        <ul>
+                            <li>
+                                <a href="#none" class="pg_ico first" title="처음페이지"></a>
+                            </li>
+                            <li>
+                                <a href="#none" class="pg_ico prev" title="이전페이지"></a>
+                            </li>
+                            <li>
+                                <a href="#none" class="active">1</a>
+                            </li>
+                            <li>
+                                <a href="#none">2</a>
+                            </li>
+                            <li>
+                                <a href="#none" class="pg_ico next" title="다음페이지"></a>
+                            </li>
+                            <li>
+                                <a href="#none" class="pg_ico last" title="마지막페이지"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer id="footer">
+            <div class="inner">
+                <div class="dp_flex footer_wrap">
+                    <div class="fbox_left">
+                        <div class="neo_info">
+                            <div class="flogo">
+                                <img src="images/flogo_c.png" alt="NEO New E-information Organization">
+                            </div>
+                            <div class="address">
+                                <p>광주광역시 서구 하남대로 698(동천동 627번지) 일군타워 7층 701호 (우편번호 61903)</p>
+                                <ul>
+                                    <li><a href="#none">대표전화 062-522-0234</a></li>
+                                    <li>팩스 062-522-0238</li>
+                                    <li>사업자등록번호 243-07-00246</li>
+                                </ul>
+                                <ul class="mtb30">
+                                    <li><a href="#none">개인정보처리방침</a></li>
+                                    <li><a href="#none">이메일주소무단수집거부</a></li>
+                                    <li><a href="#none">회사소개</a></li>
+                                    <li><a href="#none">오시는길</a></li>
+                                </ul>
+                                <p class="blue_l">copyright @ NEO. all rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fbox_right dp_flex">
+                        <div class="user_link">
+                            <p class="f_tit">For User</p>
+                            <ul>
+                                <li><a href="#" target="_blank" title="새창열기" class="btn">포트확인<span class="ico_blank_b"></span></a></li>
+                                <li><a href="#" target="_blank" title="새창열기" class="btn">통합진단클리닉<span class="ico_blank_b"></span></a></li>
+                                <li><a href="#" target="_blank" title="새창열기" class="btn">W3C<span class="ico_blank_b"></span></a></li>
+                                <li><a href="#" target="_blank" title="새창열기" class="btn">표준약관양식<span class="ico_blank_b"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="contact">
+                            <p class="f_tit">Contact Us</p>
+                            <p class="blue_l">shkim@neoitc.co.kr</p>
+                            <p class="blue_l mt16">062-522-0234</p>
+                            <p>평일 09:00 ~ 18:00 (주말·공휴일 휴무)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>
