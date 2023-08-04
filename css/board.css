@@ -36,6 +36,19 @@
 .bo_list .box_type .info_box li {margin-right: 35px;}
 .bo_list .box_type .info_box li span {margin-left: 10px;}
 
+.bo_list .table_type {border-collapse: separate;border-spacing: 0;text-align: center;}
+.bo_list .table_type thead tr {box-shadow: 0 14px 28px rgba(0, 0, 0, 0.07), 0 10px 28px rgba(0, 0, 0, 0.07);border-radius: 30px;}
+.bo_list .table_type thead th {border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;padding: 15px;}
+.bo_list .table_type thead th:first-child {border-left: 1px solid #ccc;border-radius: 30px 0 0 30px;}
+.bo_list .table_type thead th:last-child {border-right: 1px solid #ccc;border-radius: 0 30px 30px 0;}
+.bo_list .table_type tbody:before {content: "-";display: block;line-height: 1.7em;color: transparent;}
+
+.bo_list .table_type tbody tr td {padding: 15px 10px;border-top: 1px solid transparent;border-bottom: 1px solid transparent;transition:  all .3s;position: relative;}
+.bo_list .table_type tbody tr td:first-child {border-left: 1px solid transparent;border-radius: 50px 0 0 50px;}
+.bo_list .table_type tbody tr td:last-child {border-right: 1px solid transparent;border-radius: 0 50px 50px 0;}
+.bo_list .table_type tbody tr td::after {content: '';display: block;width: 2px;height: 10px;background-color: #ccc;position: absolute;top: 50%;transform: translateY(-50%);right: -1px;}
+.bo_list .table_type tbody tr td:last-child::after {display: none;}
+.bo_list .table_type tbody tr:hover td {border-color: #ccc;}
 
 /* 버튼 */
 .btn_box a {padding: 10px 20px;border-radius: 7px;transition: all .3s;}
