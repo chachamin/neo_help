@@ -98,7 +98,6 @@
             </div>
             <div class="inner">
                 <div class="bo_form_wrap">
-                    <div></div>
                     <div class="content_notice red_l">헬프데스크 업무는 순차적으로 처리되고 있습니다. 영업일 기준 1 ~ 3일 내 접수 진행됩니다.</div>
                     <div class="bo_form_box">
                         <div class="sub_tit">
@@ -143,15 +142,29 @@
                                         <div class="tit">제목<span class="required">필수</span></div>
                                     </th>
                                     <td>
-                                        <input type="text" title="제목을 입력하세요">
+                                        <input type="text" title="제목을 입력하세요" class="w100p">
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>
-                                        <div class="tit">내용<span class="required">필수</span></div>
+                                        <div class="tit">요청내용<span class="required">필수</span></div>
                                     </th>
                                     <td>
-                                        <input type="text" title="요청 업무내용을 입력하세요.">
+                                        <textarea name="content" id="content" cols="120" rows="50" title="요청업무 내용을 입력하세요." class="w100p"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <div class="tit">참조링크</div>
+                                    </th>
+                                    <td>
+                                        <ul>
+                                            <li>
+                                                <div class="link_input">
+                                                    <input type="">
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </td>
                                 </tr>
                             </table>

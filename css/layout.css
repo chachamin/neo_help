@@ -152,6 +152,10 @@
 .content_join .info_list li .num_input span {line-height: 45px;margin: 0 2.5%;}
 .content_join .notice_box {padding: 20px;background-color: #fafafa;margin-bottom: 30px;}
 
+/* 회원정보 수정 */
+.sub_tit .ad_t .required {margin-right: 3px;}
+.mem_info .user_info .fix_info {line-height: 45px;font-weight: 400;}
+.mem_info .btn_box {text-align: right;padding-top: 30px;}
 
 
 

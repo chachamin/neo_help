@@ -50,6 +50,14 @@
 .bo_list .table_type tbody tr td:last-child::after {display: none;}
 .bo_list .table_type tbody tr:hover td {border-color: #ccc;}
 
+.bo_list .table_type tbody tr:hover td span[class*="step_"] {position: relative;}
+.bo_list .table_type tbody tr:hover td span[class*="step_"]::after {content: '';display: block;width: 200%;height: 5px;position: absolute;left: 50%;transform: translateX(-50%);bottom: 2px;z-index: -1;}
+.bo_list .table_type tbody tr:hover td span.step_1::after {background: rgba(255, 86, 15, .3);}
+.bo_list .table_type tbody tr:hover td span.step_2::after {background: rgba(0, 114, 19, .3);}
+.bo_list .table_type tbody tr:hover td span.step_3::after {background: rgba(0, 56, 117, .3);}
+.bo_list .table_type tbody tr:hover td span.step_4::after {background: rgba(255, 3, 0, .3);}
+.bo_list .table_type tbody tr:hover td span.total_num {font-weight: 400;}
+
 /* 버튼 */
 .btn_box a {padding: 10px 20px;border-radius: 7px;transition: all .3s;}
 .btn_box a:hover {box-shadow: 0 10px 10px rgba(0, 0, 0, 0.07), 0 10px 10px rgba(0, 0, 0, 0.07);}
@@ -57,7 +65,8 @@
 .btn_box .modify {background-color: #149c26;color: #fff;}
 .btn_box .del {background-color: #ff7700;color: #fff;}
 .btn_box .progress {background-color: #003875;color: #fff;}
-.btn_box .back {border: 1px solid #121212}
+.btn_box .back {border: 1px solid #121212;}
+.btn_box .save {border: 1px solid #003875;}
 
 /* 뷰 */
 .bo_view_wrap {padding: 50px 0;}
@@ -92,3 +101,16 @@
 
 .bo_view .add_file a {width: 100%;padding: 15px;background: #f4f4f4;margin-bottom: 5px;font-size: 0.938rem;padding-left: 35px;position: relative;}
 .bo_view .add_file a::after {content: '';display: block;width: 18px;height: 18px;background: url(../images/add_file.png) no-repeat center;position: absolute;top: 15px;left: 10px;}
+
+/* 폼 */
+.bo_form_wrap {padding:50px 0;}
+.bo_form_wrap .content_notice {font-size: 1.125rem;}
+.bo_form_wrap .bo_form_box {margin-top: 25px;width: 100%;padding: 40px;box-shadow: 0 14px 28px rgba(0, 0, 0, 0.07), 0 10px 28px rgba(0, 0, 0, 0.07);}
+.bo_form_wrap .bo_form_box .sub_tit {padding-bottom: 10px;border-bottom: 1px solid #ddd;display: flex;align-items: center;}
+.bo_form_wrap .bo_form_box .sub_tit p {font-size: 1.25rem;font-weight: 400;}
+.bo_form_wrap .bo_form_box .sub_tit .ad_t {margin-left: 5px;font-size: 0.875rem;padding-top: 5px;font-weight: 300;display: flex;}
+.bo_form {padding:20px;}
+.bo_form_box th {width: 10%;text-align: left;}
+.bo_form_box th .tit {line-height: 45px;}
+.bo_form_box td {padding: 5px 0;}
+.bo_form_box td textarea {height: 200px;}
