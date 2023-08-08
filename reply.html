@@ -98,10 +98,9 @@
             </div>
             <div class="inner">
                 <div class="bo_form_wrap">
-                    <div class="content_notice red_l">헬프데스크 업무는 순차적으로 처리되고 있습니다. 영업일 기준 1 ~ 3일 내 접수 진행됩니다.</div>
                     <div class="bo_form_box">
                         <div class="sub_tit">
-                            <p>업무요청정보입력</p>
+                            <p>유지보수 처리현황</p>
                             <div class="ad_t">(<span class="required">필수</span>필수입력사항)</div>
                         </div>
                         <div class="bo_form">
@@ -109,18 +108,24 @@
                                 <caption>업무요청정보를 입력하는 폼입니다.</caption>
                                 <tr>
                                     <th>
-                                        <div class="tit">아이디<span class="required">필수</span></div>
+                                        <div class="tit">담당자</div>
                                     </th>
                                     <td>
-                                        <input type="text" title="작성자를 입력하세요" value="유지보수관리자">
+                                        <input type="text" title="담당자를 입력하세요." placeholder="유지보수담당자">
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>
-                                        <div class="tit">기관명</div>
+                                        <div class="tit">진행상황<span class="required">필수</span></div>
                                     </th>
                                     <td>
-                                        네오(NEO)
+                                        <select>
+                                            <option>선택하세요.</option>
+                                            <option>접수중</option>
+                                            <option>진행중</option>
+                                            <option>처리완료</option>
+                                            <option>처리불가</option>
+                                        </select>
                                     </td>
                                 </tr>
                                 <tr>
@@ -139,38 +144,13 @@
                                 </tr>
                                 <tr>
                                     <th>
-                                        <div class="tit">제목<span class="required">필수</span></div>
-                                    </th>
-                                    <td>
-                                        <input type="text" title="제목을 입력하세요" class="w100p">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <div class="tit">요청내용<span class="required">필수</span></div>
+                                        <div class="tit">조치사항</div>
                                     </th>
                                     <td>
                                         <textarea name="content" id="content" cols="120" rows="50"
                                             title="요청업무 내용을 입력하세요." class="w100p"></textarea>
                                     </td>
                                 </tr>
-                                <!-- <tr>
-                                    <th>
-                                        <div class="tit">참조링크</div>
-                                    </th>
-                                    <td>
-                                        <ul class="add_list">
-                                            <li class="dp_flex">
-                                                <div class="link_input">
-                                                    <input type="text" title="참조링크를 입력해주세요.">
-                                                </div>
-                                                <div class="add_btn plus_link">
-                                                    <a href="#none"><span class="ir_pm">링크 추가</span></a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr> -->
                                 <tr>
                                     <th style="vertical-align: top;padding-top: 15px;">첨부파일</th>
                                     <td>
@@ -180,12 +160,9 @@
                                                 <button type="button" class="add_file">+</button>
                                             </li>
                                         </ul>
-                                        <div class="addFile_notice">
+                                        <div class="addFile_notice short_list">
                                             <ul>
                                                 <li>첨부파일은 최대 5개까지 추가 가능합니다. <span>(총 용량 100MB)</span></li>
-                                                <li>용량이 큰 파일은 <span>메일 (shkim@neoitc.co.kr)</span>로 발송 후 고객센터로 전화해주세요.
-                                                </li>
-                                                <li>파일명에 특수문자를 빼고 올려주세요. 특수문자가 포함되면 파일다운로드가 불가능합니다.</li>
                                             </ul>
                                         </div>
                                     </td>
