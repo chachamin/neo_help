@@ -11,7 +11,7 @@
 .pagination ul li a.next {background-image: url(../images/pg_next.png);margin-left: 15px;margin-right: -2px;}
 .pagination ul li a.last {background-image: url(../images/pg_last.png);}
 .pagination ul li a:not(.active):hover {background-color: #f0f0f0;}
-.pagination ul li a.active {background-color: #727272;color: #fff;}
+.pagination ul li a.active {background-color: #acacac;color: #fff;}
 
 /* 리스트 */
 .bo_list_wrap{padding: 50px 0 25px;}

@@ -105,8 +105,8 @@
 .pg_title_area .step_box ul {display: flex;}
 .pg_title_area .step_box ul li {margin-right: 20px;position: relative;}
 .pg_title_area .step_box ul li:last-child {margin-right: 0;}
-.pg_title_area .step_box ul li::after {content: '';display: block;width: 18px;height: 18px;background: url(../images/arrow_sr_b.png) no-repeat center;position: absolute;top: 0;right: -20px;}
-.pg_title_area .step_box ul li:last-child::after {display: none;}
+.pg_title_area .step_box:not(.state_list) ul li::after {content: '';display: block;width: 18px;height: 18px;background: url(../images/arrow_sr_b.png) no-repeat center;position: absolute;top: 0;right: -20px;}
+.pg_title_area .step_box:not(.state_list) ul li:last-child::after {display: none;}
 
 
 /* 회원가입 - 개인정보 동의*/
