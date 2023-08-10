@@ -63,12 +63,12 @@
 /* 버튼 */
 .btn_box a {padding: 10px 20px;border-radius: 7px;transition: all .3s;}
 .btn_box a:hover {box-shadow: 0 10px 10px rgba(0, 0, 0, 0.07), 0 10px 10px rgba(0, 0, 0, 0.07);}
-.btn_box .write {border: 1px solid #003875;}
+.btn_box .write {background-color: #0073EA;color: #fff;}
 .btn_box .modify {background-color: #149c26;color: #fff;}
-.btn_box .del {background-color: #ff7700;color: #fff;}
+.btn_box .del {background-color: #FF0300;color: #fff;}
 .btn_box .progress {background-color: #003875;color: #fff;}
 .btn_box .back {border: 1px solid #121212;}
-.btn_box .save {border: 1px solid #003875;}
+.btn_box .save {background-color: #0073EA;color: #fff;}
 
 .btn_box.mem_account a {background: #fff;color: #000;border: 1px solid #121212;padding:7px 13px}
 
@@ -124,7 +124,7 @@
 
 .add_list li {margin-bottom: 5px;}
 .add_list li input {width: 50%;}
-.add_list li button {width: 45px;background:rgb(26, 114, 231);border-radius: 4px;display: block;margin-left: 5px;position: relative;color: #fff;font-weight: 400;font-size: 1.25rem;border: 1px solid rgb(26, 114, 231);}
+.add_list li button {width: 45px;background: #434e5d;border-radius: 4px;display: block;margin-left: 5px;position: relative;color: #fff;font-weight: 400;font-size: 1.25rem;border: 1px solid #434e5d;}
 
 .addFile_notice {padding: 20px 20px 20px 80px;background-color: #fafafa;margin: 10px 0 0;position: relative;}
 .addFile_notice::after {content: '';display: block;width: 50px;height: 50px;background: url(../images/addFile_notice.png) no-repeat center;position: absolute;top: 23px;left: 20px;}
