@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+@media (max-width: 1440px){
+
+    /* 기본 */
+    .inner{width:100%;padding-right:1.25rem;padding-left:1.25rem; margin:0 auto; box-sizing:border-box;}
+
+
+    /* 로그인 */
+    .main_wrap .right_box {padding-top: 125px;}
+    .main_wrap .form_box .pw_result .notice {text-align: left;}
+
+    /* 서브 */
+    .img_logo .neo_logo {margin-left: 20px;}
+    .menu_r {right: 20px;}
+}
+
+@media (max-width: 1280px){
+    body,html{font-size:15px;
+	  -webkit-text-size-adjust : none;  /* 크롬, 사파리, 오페라 신버전 */
+	  -ms-text-size-adjust : none;  /* IE */
+	  -moz-text-size-adjust : none;  /* 파이어폭스 */
+	  -o-text-size-adjust : none;  /* 오페라 구버전 */
+	}
+
+    /* 서브 */
+    .head_wrap, .img_logo, .img_logo .neo_logo, .text_logo {height: 100px;}
+    .sub_container {padding: 65px 0 50px;}
+
+}
+
+@media (max-width: 1024px){
+
+    /* 로그인 */
+    .main_wrap {display: block;}
+    .main_wrap > div {width: 100%;}
+    .main_wrap .left_box {padding: 30px;background-image: none;height: 98px;}
+    .main_wrap .left_box .logo_area {margin-bottom: 0;}
+    .main_wrap .left_box .work_time {display: none;}
+    .main_wrap .right_box {height: calc(100vh - 98px);padding-top: 100px;}
+
+    /* 서브 */
+    .pg_title_area .tit_wrap {padding-bottom: 50px;border-bottom: none;}
+    .pg_title_area .tit_wrap .tit_box {text-align: center;}
+    .pg_title_area .step_box {width:100%; background-color: #f4f4fa;padding: 10px;bottom: 0;}
+    .pg_title_area .step_box ul {justify-content: center;}
+
+}
+
+@media (max-width: 960px){
+    /* 서브 */
+    .fbox_right .user_link {margin-right: 20px;}
+}
+
+@media (max-width: 820px){
+
+    /* 로그인 */
+    .main_wrap .right_box .login_box {width: 80%;}
+}
+
+@media (max-width: 760px){
+
+}
+
+@media (max-width: 680px){
+
+    /* 로그인 */
+    .main_wrap .right_box .login_box {padding:80px 40px 70px;}
+
+}
+
+@media (max-width: 560px){
+
+    /* 로그인 */
+    .main_wrap .right_box .login_box {padding:60px 30px 65px;}
+    .main_wrap .login_box .tit_box .typo {font-size: 1.875rem;}
+    .main_wrap .login_box .form_box {margin: 25px 0 30px;}
+}
+
+@media (max-width: 480px){
+
+}
+
+@media (max-width: 475px){
+
+}
+
+@media (max-width: 375px){
+
+}
+
+@media (max-width: 320px){
+
+}
