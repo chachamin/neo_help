@@ -56,6 +56,27 @@
 
     /* 로그인 */
     .main_wrap .right_box .login_box {width: 80%;}
+
+    /* footer */
+    .footer_wrap {flex-wrap: wrap;}
+    .footer_wrap > div {width: 100%;}
+    .fbox_right {order: 1;flex-wrap: wrap;margin-bottom: 20px;}
+    .fbox_right > div {width: 100%;}
+    .fbox_right .user_link {margin-right: 0;}
+    .fbox_right .user_link ul li {float: left; margin-right: 10px;}
+    .fbox_right .contact {margin-top: 20px;}
+    .fbox_left {order: 2;}
+    .fbox_right .f_tit {margin-bottom: 10px;padding-top: 0;}
+
+
+    /* 서브 */
+    .bo_list_wrap {padding:35px 0 25px;}
+    .search_wrap .notice {float: none;}
+    .search_form.dp_flex {float: none;}
+    .search_input_wrap {width: calc(100% - 110px);}
+    .search_input_wrap input {width: 90%;}
+
+
 }
 
 @media (max-width: 760px){
