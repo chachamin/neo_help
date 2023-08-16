@@ -68,7 +68,6 @@
     .fbox_left {order: 2;}
     .fbox_right .f_tit {margin-bottom: 10px;padding-top: 0;}
 
-
     /* 서브 */
     .bo_list_wrap {padding:35px 0 25px;}
     .search_wrap .notice {float: none;}
@@ -76,10 +75,10 @@
     .search_input_wrap {width: calc(100% - 110px);}
     .search_input_wrap input {width: 90%;}
 
-
 }
 
 @media (max-width: 760px){
+    /* 서브 */
 
 }
 
@@ -99,15 +98,27 @@
 }
 
 @media (max-width: 480px){
-
+    /* 로그인 */
+    .main_wrap .right_box .login_box {width: 90%;}
+    .main_wrap .login_box .tit_box > div:not(.typo) {font-size: 1.125rem;}
+    .main_wrap .login_box .tit_box .typo {font-size: 1.75rem;}
+    .main_wrap .login_box .contact_ico {right:-12px;}
 }
 
-@media (max-width: 475px){
+@media (max-width: 425px){
+
+    /* 로그인 */
+    .main_wrap .login_box .tit_box > div:not(.typo) {font-size: 1.1rem;}
+    .main_wrap .login_box .tit_box .typo {font-size: 1.6rem;}
 
 }
 
 @media (max-width: 375px){
 
+     /* 로그인 */
+    .main_wrap .login_box .tit_box > div:not(.typo) {font-size: 1rem;}
+    .main_wrap .login_box .tit_box .typo {font-size: 1.467rem;}
+    .main_wrap .right_box .login_box {padding: 50px 17px 65px;}
 }
 
 @media (max-width: 320px){
