@@ -17,9 +17,11 @@
 .bo_list_wrap{padding: 50px 0 25px;}
 
 .search_wrap .notice {display: inline-block;height: 45px;line-height: 45px;font-size: 1.125rem;}
+.search_wrap .notice p {color: red;}
 .search_form.dp_flex {background: #F6F6F6;padding: 0 10px;border-radius: 30px;overflow: hidden;}
 .search_form .empty_bak {background-color: transparent;border: none;}
 .search_form input:focus, .search_form select:focus {outline: none;}
+.search_input_wrap .btn_search {background: url(/images/search_ico.png) no-repeat center center;height: 45px;width: 45px;line-height: 45px;font-size: 0;border: 0;}
 
 .bo_list {padding: 25px 0 15px;}
 .bo_list .box_type > li {width: 100%;border: 1px solid #ddd;margin-bottom: 15px;position: relative;padding: 30px 95px;transition: all .3s;}
@@ -133,3 +135,12 @@
 .addFile_notice ul li span {color: red;}
 .addFile_notice.short_list {padding: 20px 20px 20px 40px;}
 .addFile_notice.short_list::after {content: '!';width: 20px;height: 20px;background-image: none;background-color: red;border-radius: 50%;text-align: center;line-height: 20px;top: 19px;left:15px; font-size: 0.635rem;color: #fff;}
+
+/* 관리자 등록버튼 */
+.master_box {position: relative;background: #f4f6f8;border: 1px solid #ddd;padding: 20px;margin-bottom: 20px;align-items: center;justify-content: center;margin-bottom: 40px;}
+.master_box .btn_box {margin-left: 20px;}
+.master_box .btn_box a {padding:10px 30px;background: #043b73;color: #fff !important;}
+
+/* 모바일 스크롤 */
+.mo_notice {margin-top: 20px;padding: 10px;background: #fff6f6;font-size: 0.875rem;display: none;}
+.mo_notice span {font-size: 1.125rem;}

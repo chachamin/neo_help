@@ -46,23 +46,16 @@
                             <div class="typo">Welcome to NEO HELP DESK</div>
                         </div>
                         <div class="form_box">
-                            <form name="login" method="post" action="/login.do">
-                                <div class="input_wrap input_id">
-                                    <input type="text" id="id" name="m_id" value="" maxlength="80" accesskey="L" title="아이디를 입력하세요." placeholder="아이디를 입력하세요.">
-                                </div>
-                                <div class="input_wrap input_pw">
-                                    <input type="password" id="pw" name="m_pw" maxlength="16" title="비밀번호를 입력하세요" placeholder="비밀번호를 입력하세요">
-                                </div>
-                                <div class="btn_wrap">
-                                    <input type="submit" class="bg_blue" onclick="submit_check(document.login);" onkeypress="submit_check(document.login);" title="로그인" value="로그인">
-                                    <% if(request.getParameter("m_id") != null){ %>
-                                        <div class="find_result"><p>입력하신 정보가 일치하지 않습니다.</p></div>
-                                    <% } %>
-                                    <% if(mGrade.equals("false")){ %>
-                                        <div class="find_result"><p>관리자만 로그인 가능합니다.</p></div>
-                                    <% } %>
-                                </div>
-                            </form>
+                            <div class="input_wrap input_id">
+                                <input type="text" id="id" name="m_id" title="아이디를 입력하세요." placeholder="아이디를 입력하세요.">
+                            </div>
+                            <div class="input_wrap input_pw">
+                                <input type="password" id="pw" name="m_pw" title="비밀번호를 입력하세요" placeholder="비밀번호를 입력하세요">
+                            </div>
+                            <div class="btn_wrap">
+                                <button type="submit" class="bg_blue" onClick="location.href='list.html'">로그인</button>
+                                <!-- <input type="submit" class="bg_blue" onclick="submit_check(document.login);" onkeypress="submit_check(document.login);" title="로그인" value="로그인"> -->
+                            </div>
                         </div>
                         <div class="sign_wrap">
                             <div class="join">
@@ -70,8 +63,8 @@
                             </div>
                             <div class="find_box">
                                 <ul>
-                                    <li><a href="/member.do?act=idFind&gubun=member">아이디찾기</a></li>
-                                    <li><a href="/member.do?act=pwFind&gubun=member">비밀번호 찾기</a></li>
+                                    <li><a href="find_id.html">아이디찾기</a></li>
+                                    <li><a href="find_pw.html">비밀번호 찾기</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -81,8 +74,8 @@
                     </div>
                     <div class="aside">
                         <ul class="link_list">
-                            <li><a href="http://neoitc.co.kr/contents.do?S=S01&M=070400000000">개인정보처리방침</a></li>
-                            <li><a href="http://neoitc.co.kr/contents.do?S=S01&M=070500000000">이메일무단수집거부</a></li>
+                            <li><a href="#none">개인정보처리방침</a></li>
+                            <li><a href="#none">이메일무단수집거부</a></li>
                         </ul>
                         <div class="copy">COPYRIGHT @ NEO. ALL RIGHTS RESERVED.</div>
                     </div>

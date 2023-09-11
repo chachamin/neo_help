@@ -27,9 +27,10 @@
             <div class="head_wrap">
                 <div class="inner">
                     <h1 class="img_logo">
-                        <a href="#none">
+                        <a href="/">
                             <div class="neo_logo">
-                                <img src="images/neo_logo_w.png" alt="NEO New E-information Organization">
+                                <img src="images/neo_logo_w.png" alt="NEO New E-information Organization" class="web_logo">
+                                <img src="images/neoligo_mo.jpg" alt="N" class="mo_logo">
                             </div>
                         </a>
                     </h1>
@@ -41,12 +42,24 @@
                     <div id="gnb" class="menu_r">
                         <h2 id="navi" class="sound_only">네오 헬프테스크 주메뉴</h2>
                         <ul class="dp_flex">
-                            <li class="round">
+                            <li class="round_box mo_w30">
+                                <a href="statistics.html" class="statistics">
+                                    <p>유지보수 통계</p>
+                                    <img src="/images/graph.png">
+                                </a>
+                            </li>
+                            <!-- <li class="round_box mo_w30">
+                                <a href="#none" class="register">
+                                    <p>유지보수 등록하기</p>
+                                    <img src="/images/write_ico.png">
+                                </a>
+                            </li> -->
+                            <li class="round mo_w30">
                                 <a href="mem_list.html" class="join">
                                     <span class="ir_pm">회원정보수정</span>
                                 </a>
                             </li>
-                            <li class="round">
+                            <li class="round mo_w30">
                                 <a href="index.html" class="sign_out" title="로그아웃">
                                     <span class="ir_pm">로그아웃</span>
                                 </a>
@@ -56,18 +69,6 @@
                                     <span class="ir_pm">로그인</span>
                                 </a>
                             </li> -->
-                            <!-- <li class="round_box">
-                                <a href="#none" class="register">
-                                    <p>유지보수 등록하기</p>
-                                    <img src="/images/write_ico.png">
-                                </a>
-                            </li> -->
-                            <li class="round_box">
-                                <a href="statistics.html" class="statistics">
-                                    <p>유지보수 통계</p>
-                                    <img src="/images/graph.png">
-                                </a>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -101,7 +102,7 @@
                     <div class="bo_list_wrap">
                         <div class="search_wrap clearfix">
                             <div class="notice fl">
-                                <span class="red_l">업무의 신속성이 기하는 유지보수 업무는 담당자에게 직접 연락</span>부탁드립니다.
+                                <p>업무의 신속성이 기하는 유지보수 업무는 담당자에게 직접 연락<span class="bk">부탁드립니다.</span></p>
                             </div>
                             <div class="search_form dp_flex fr">
                                 <select name="keyField" id="select" title="검색구분 선택" class="empty_bak">
