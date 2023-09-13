@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<ul>
+    <%
+	if(nPage > 1){
+		int nPage2 = nPage-10;
+		if(nPage2 > 1){ nPage2 = nPage2;
+		}else{ nPage2 = 1; }
+%>
+	<li>
+	    <a href="/member.do?S=<%=S%>&M=<%=M%>&b_code=<%=b_code%>&nPage=1&category=<%=cg%>" class="pg_ico first" title="처음페이지"></a>
+	</li>
+	<li>
+	    <a href="/member.do?S=<%=S%>&M=<%=M%>&b_code=<%=b_code%>&nPage=<%=nPage2%>&category=<%=cg%>" class="pg_ico prev" title="이전페이지"></a>
+	</li>
+	<% } %>
+	<%
+	int bar = 0;
+	for(int i = startPage ; i <= endPage ; i++){
+		bar++;
+		if(i == nPage){
+			%> <li>
+			<a href="#none" class="active"><%=i%></a>
+		    </li><%
+		}else{
+			%> <li>
+			    <a href="/member.do?S=<%=S%>&M=<%=M%>&b_code=<%=b_code%>&nPage=<%=i%>&category=<%=cg%>"><%=i%></a>
+			</li><%
+		    }
+		}
+	    %>
+	    <%
+		if(nPage < totalPage){
+            int nPage2 = nPage+10;
+            if(nPage2 < totalPage){ nPage2 = nPage2;
+            }else{ nPage2 = totalPage; }
+	    %>
+	<li>
+	    <a href="/member.do?S=<%=S%>&M=<%=M%>&b_code=<%=b_code%>&nPage=<%=nPage2%>&category=<%=cg%>" class="pg_ico next" title="다음페이지"></a>
+	</li>
+	<li>
+	    <a href="/member.do?S=<%=S%>&M=<%=M%>&b_code=<%=b_code%>&nPage=<%=totalPage%>&category=<%=cg%>" class="pg_ico last" title="마지막페이지"></a>
+	</li>
+	<% } %>
+    </ul>

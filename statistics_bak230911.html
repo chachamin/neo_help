@@ -41,16 +41,33 @@
                     <div id="gnb" class="menu_r">
                         <h2 id="navi" class="sound_only">네오 헬프테스크 주메뉴</h2>
                         <ul class="dp_flex">
-                            <li class="round join">
-                                <a href="#none">
-                                    <span class="ir_pm">회원가입</span>
+                            <li class="round">
+                                <a href="#none" class="join">
+                                    <span class="ir_pm">회원정보수정</span>
                                 </a>
                             </li>
-                            <li class="round sign_in">
-                                <a href="#none">
+                            <li class="round">
+                                <a href="#none" class="sign_out">
+                                    <span class="ir_pm">로그아웃</span>
+                                </a>
+                            </li>
+                            <!-- <li class="round">
+                                <a href="#none" class="sign_in">
                                     <span class="ir_pm">로그인</span>
                                 </a>
+                            </li> -->
+                            <li class="round_box">
+                                <a href="#none" class="register">
+                                    <p>유지보수 등록하기</p>
+                                    <img src="/images/write_ico.png">
+                                </a>
                             </li>
+                            <!-- <li class="round_box">
+                                <a href="#none" class="statistics">
+                                    <p>유지보수 통계</p>
+                                    <img src="/images/graph.png">
+                                </a>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -64,51 +81,65 @@
                         <div class="tit_wrap">
                             <div class="tit_box">
                                 <div class="typo eng_t">
-                                    <p><span class="add_tDot">Join Us</span></p>
+                                    <p><span class="add_tDot">Maintenance</span></p>
                                 </div>
-                                <div class="tit"><span><%=title%></span></div>
+                                <div class="tit"><span>유지보수 통계</span></div>
                             </div>
-                            <%if(login_userId == null){%>
-                            <div class="step_box">
+                            <div class="step_box state_list">
                                 <ul>
-                                    <li>가입약관동의</li>
-                                    <li>정보입력</li>
-                                    <li class="red_l">가입완료</li>
+                                    <li><a href="#none">전체 <span>1500</span></a></li>
+                                    <li><a href="#">접수중 <span class="step_1">4</span></a></li>
+                                    <li><a href="#">처리중 <span class="step_2">3</span></a></li>
+                                    <li><a href="#">처리완료 <span class="step_3">1489</span></a></li>
+                                    <li><a href="#">반영불가 <span class="step_4">4</span></a></li>
                                 </ul>
                             </div>
-                            <%}%>
                         </div>
                     </div>
                 </div>
                 <div class="inner">
-                    <div class="content_join">
-                        <div class="content_box">
-                            <div class="sign_up">
-                                <div class="complete">
-                                    <p><%=title%>이 완료되었습니다.</p>
-                                </div>
-                                <%if(login_userId == null){%>
-                                <div class="notice_text">
-                                    <p>네오(NEO) 헬프데스크는 회원 전용 서비스로 <span class="red_l">회원가입 완료 후 관리자의 승인</span>을 거쳐 로그인이 가능합니다.</p>
-                                    <p>회원가입 완료 후 고객센터 (<a href="tel:062-522-0234" >062-522-0234</a>)로 연락주시면 더욱 빠른 처리가 가능합니다.</p>
-                                </div>
-                                <%}%>
-                            </div>
-                            <%if(loginSession){ %>
-                                <%if(!login_userGrade.equals("A00")){%>
-                                    <div class="btn_wrap">
-                                        <a href="/" class="go_hone bg_blue">메인으로</a>
-                                    </div>
-                                <%}else{ %>
-                                    <div class="btn_wrap">
-                                        <a href="/member.do">목록</a>
-                                    </div>
-                                <% } %>
-                            <%} else { %>
-                                <div class="btn_wrap">
-                                    <a href="/" class="go_hone bg_blue">메인으로</a>
-                                </div>
-                            <%} %>
+                    <div class="bo_list_wrap">
+                        <div class="mo_notice"><span class="red">*</span>테이블을 좌우로 움직여 정보를 확인해주세요.</div>
+                        <div class="bo_list stats_list">
+                            <table class="table_type">
+                                <caption>유지보수 통계 리스트를 제공하는 표입니다.</caption>
+                                <colgroup>
+                                    <col width="18%">
+                                    <col width="18%">
+                                    <col width="18%">
+                                    <col width="18%">
+                                    <col width="18%">
+                                    <col width="10%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>기관명</th>
+                                        <th><span class="step_A">접수중</span></th>
+                                        <th><span class="step_B">진행중</span></th>
+                                        <th><span class="step_D">처리완료</span></th>
+                                        <th><span class="step_D">처리불가</span></th>
+                                        <th>계</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <%
+                                        List allList = (List)request.getAttribute("averageList");
+                                        for(int i = 0 ; i < allList.size() ; i++){
+                                            AverageVO vo = (AverageVO)allList.get(i);
+                                    %>
+                                    <tr>
+                                        <td><%=vo.getM_nick()%></td>
+                                        <td><span class="step_A"><%=vo.getState_a()%></span></td>
+                                        <td><span class="step_B"><%=vo.getState_b()%></span></td>
+                                        <td><span class="step_C"><%=vo.getState_c()%></span></td>
+                                        <td><span class="step_D"><%=vo.getState_d()%></span></td>
+                                        <td><span class="total_num">0</span></td>
+                                    </tr>
+                                    <%
+                                        }
+                                    %>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

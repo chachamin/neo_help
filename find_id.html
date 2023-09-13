@@ -38,29 +38,38 @@
             <div class="right_box">
                 <div class="fade">
                     <div class="login_box">
-                        <div class="tit_box">
-                            <div class="typo">아이디 찾기</div>
-                            <div>가입하신 성명과 연락처 정보로 아이디를 찾습니다.</div>
-                        </div>
-                        <div class="form_box">
-                            <div class="input_wrap input_name">
-                                <input type="text" id="name" name="m_name" title="가입하신 성명을 입력하세요." placeholder="성명을 입력하세요.">
+                        <form name="srhForm" method="post" action="/member.do?S=<%=S%>&amp;M=<%=M%>&amp;b_code=<%=b_code%>">
+                            <input type="hidden" name="S" value="<%=S%>" />
+                            <input type="hidden" name="M" value="<%=M%>" />
+                            <input type="hidden" name="b_code" value="<%=b_code%>" />
+                            <input type="hidden" name="nPage" value="1" />
+                            <div class="tit_box">
+                                <div class="typo">아이디 찾기</div>
+                                <div>가입하신 성명과 연락처 정보로 아이디를 찾습니다.</div>
                             </div>
-                            <div class="input_wrap input_pNum">
-                                <input type="text" id="pNum" name="m_pNum" title="가입하신 연락처를 입력하세요." placeholder="- 를 포함한 연락처를 입력하세요.">
+                            <div class="form_box">
+                                <form name="login" method="post" action="/member.do?act=idFind">
+                                    <input type="hidden" name="returnURL" value="/">
+                                    <div class="input_wrap input_name">
+                                        <input type="text" id="name" name="m_name" maxlength="41" title="아이디" class="" value="" maxlength="80" accesskey="L" placeholder="성명을 입력하세요.">
+                                    </div>
+                                    <div class="input_wrap input_pNum">
+                                        <input type="text" id="m_tel1" name="m_tel1" title="가입하신 연락처를 입력하세요." placeholder="- 를 포함한 연락처를 입력하세요.">
+                                    </div>
+                                    <div class="btn_wrap">
+                                        <button type="submit" class="bg_blue" onClick="location.href='find_id_result.html'">아이디 찾기</button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="btn_wrap">
-                                <button type="submit" class="bg_blue" onClick="location.href='find_id_result.html'">아이디 찾기</button>
-                            </div>
-                        </div>
+                        </form>
                         <div class="sign_wrap">
                             <div class="join">
-                                <a href="join.html">회원가입</a>
+                                <a href="/member.do?act=agree&gubun=member">회원가입</a>
                             </div>
                             <div class="find_box">
                                 <ul>
-                                    <li><a href="find_id.html">아이디찾기</a></li>
-                                    <li><a href="find_pw.html">비밀번호 찾기</a></li>
+                                    <li><a href="/member.do?b_code=&act=idFind&gubun=member">아이디찾기</a></li>
+                                    <li><a href="/member.do?b_code=&act=pwFind&gubun=member">비밀번호 찾기</a></li>
                                 </ul>
                             </div>
                         </div>

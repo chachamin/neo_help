@@ -42,12 +42,12 @@
                     <h2 id="navi" class="sound_only">네오 헬프테스크 주메뉴</h2>
                     <ul class="dp_flex">
                         <li class="round">
-                            <a href="#none" class="join">
+                            <a href="mem_list.html" class="join">
                                 <span class="ir_pm">회원정보수정</span>
                             </a>
                         </li>
                         <li class="round">
-                            <a href="#none" class="sign_out">
+                            <a href="index.html" class="sign_out">
                                 <span class="ir_pm">로그아웃</span>
                             </a>
                         </li>
@@ -56,18 +56,18 @@
                                     <span class="ir_pm">로그인</span>
                                 </a>
                             </li> -->
-                        <li class="round_box">
+                        <!-- <li class="round_box">
                             <a href="#none" class="register">
                                 <p>유지보수 등록하기</p>
                                 <img src="/images/write_ico.png">
                             </a>
-                        </li>
-                        <!-- <li class="round_box">
+                        </li> -->
+                        <li class="round_box">
                                 <a href="#none" class="statistics">
                                     <p>유지보수 통계</p>
                                     <img src="/images/graph.png">
                                 </a>
-                            </li> -->
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -99,10 +99,15 @@
                 </div>
                 <div class="inner">
                     <div class="bo_form_wrap">
+                        <div class="content_notice red_l">헬프데스크 업무는 순차적으로 처리되고 있습니다. 영업일 기준 1 ~ 3일 내 접수 진행됩니다.</div>
                         <div class="bo_form_box">
                             <div id="upLoading" style="position:absolute; left:40%; top:350px; visibility:visible;"></div>
                             <form name="insForm" method="post" enctype="multipart/form-data">
-                                <input type="hidden" name="m_name" value="<%=login_userNm%>" />		<!--로그인 성명-->
+                                <% if(list_no.length() > 0 && !act.equals("reply")){ %>		<!--작성자 성명-->
+                                <input type="hidden" name="m_id" value="<%=m_id%>" />				<!--작성자 아이디-->
+                                <% }else{ %>
+                                <input type="hidden" name="m_id" value="<%=login_userId%>" />		<!--로그인 아이디-->
+                                <% } %>
                                 <input type="hidden" name="list_no" value="<%=list_no%>" />		<!--게시물 번호-->
                                 <input type="hidden" name="b_filec" value="<%=b_filec%>" />		<!--첨부파일 수-->
                                 <input type="hidden" name="srhName" value="<%=srhName%>" />
@@ -110,85 +115,114 @@
                                 <input type="hidden" name="gubun" value="" />
                                 <input type="hidden" name="goURL" value="" />
                                 <input type="hidden" name="b_code" value="<%=b_code%>" />
-                                <div class="sub_tit">
-                                    <p>유지보수 처리현황</p>
-                                    <div class="ad_t">(<span class="required">필수</span>필수입력사항)</div>
-                                </div>
-                                <div class="bo_form">
-                                    <table>
-                                        <caption>업무요청정보를 입력하는 폼입니다.</caption>
-                                        <tr>
-                                            <th>
-                                                <div class="tit">담당자</div>
-                                            </th>
-                                            <td>
-                                                <input type="text" name="m_name" id="m_name" size="20" maxlength="10" title="이름을 입력하세요" value="<% if(vo != null){ %><%=vo.getM_name()%><% }else{ %><%=login_userNm%><% } %>">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                <div class="tit">진행상황<span class="required">필수</span></div>
-                                            </th>
-                                            <td>
-                                                <select name="state" title="진행상황을 선택하세요">
-                                                    <option value="">선택하세요</option>
-                                                    <%
-                                                        List cgList = (List)request.getAttribute("repairCategory");
-                                                        for(int i = 0 ; i < cgList.size() ; i++){
-                                                            RepairVO cgVO = (RepairVO)cgList.get(i);
-                                                    %>
-                                                    <option value="<%=cgVO.getCode_cd()%>"<% if(cgVO.getCode_cd().equals(vo.getState())){ %> selected="selected"<% } %>><%=cgVO.getCode_nm()%></option>
-                                                    <%
-                                                        }
-                                                    %>
-                                                    </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                <div class="tit">요청구분<span class="required">필수</span></div>
-                                            </th>
-                                            <td>
-                                                <select name="r_part" title="파트를 선택하세요">
-                                                    <option value="">선택하세요</option>
-                                                    <option value="A"<% if(r_part.equals("A")){ %> selected="selected"<% } %>>전체 수정</option>
-                                                    <option value="D"<% if(r_part.equals("D")){ %> selected="selected"<% } %>>디자인 수정</option>
-                                                    <option value="P"<% if(r_part.equals("P")){ %> selected="selected"<% } %>>프로그램 수정</option>
-                                                    <option value="Y"<% if(r_part.equals("Y")){ %> selected="selected"<% } %>>영업 부문</option>
+                            <div class="sub_tit">
+                                <p>업무요청정보입력</p>
+                                <div class="ad_t">(<span class="required">필수</span>필수입력사항)</div>
+                            </div>
+                            <div class="bo_form">
+                                <table>
+                                    <caption>업무요청정보를 입력하는 폼입니다.</caption>
+                                    <tr>
+                                        <th>
+                                            <div class="tit">작성자<span class="required">필수</span></div>
+                                        </th>
+                                        <td>
+                                            <% if(login_userId.equals("hwasun")){ %>
+                                                <input type="text" name="t_name" id="t_name" size="20" maxlength="10" title="이름을 입력하세요"  value="<% if(vo != null){ %><%=vo.getT_name()%><% } %>">
+                                                <%}else{%>
+                                                <input type="text" name="t_name" id="t_name" size="20" maxlength="10" title="이름을 입력하세요"  value="<% if(vo != null){ %><%=vo.getT_name()%><% }else{ %><%=login_userNm%><% } %>" />
+                                            <%}%>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="tit">기관명</div>
+                                        </th>
+                                        <td>
+                                            <%=memVO.getM_nick()%>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="tit">요청구분<span class="required">필수</span></div>
+                                        </th>
+                                        <td>
+                                            <select id="select" name="r_part" title="파트를 선택하세요">
+                                                <option value="">선택하세요</option>
+                                                <option value="A"<% if(r_part.equals("A")){ %> selected="selected"<% } %>>전체 수정</option>
+                                                <option value="D"<% if(r_part.equals("D")){ %> selected="selected"<% } %>>디자인 수정</option>
+                                                <option value="P"<% if(r_part.equals("P")){ %> selected="selected"<% } %>>프로그램 수정</option>
+                                                <option value="Y"<% if(r_part.equals("Y")){ %> selected="selected"<% } %>>영업 관련</option>
                                                 </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                <div class="tit">조치사항</div>
-                                            </th>
-                                            <td>
-                                                <textarea name="content" id="content" cols="120" rows="50" title="요청업무 내용을 입력하세요." class="w100p"><%=convertHtmlchars(cont)%></textarea>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th style="vertical-align: top;padding-top: 15px;">첨부파일</th>
-                                            <td>
-                                                <ul class="add_list">
-                                                    <li class="dp_flex f_v_c">
-                                                        <input type="file" name="filename0" class="att_file">
-                                                        <button type="button" class="add_file">+</button>
-                                                    </li>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="tit">제목<span class="required">필수</span></div>
+                                        </th>
+                                        <td>
+                                            <input type="text" title="제목을 입력하세요" class="w100p" value="<%=title%>" maxlength="<%=b_titlec%>">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="tit">요청내용<span class="required">필수</span></div>
+                                        </th>
+                                        <td>
+                                            <textarea name="content" id="content" cols="120" rows="50" title="요청업무 내용을 입력하세요." class="w100p">
+                                                <%=convertHtmlchars(content)%>
+                                            </textarea>
+                                        </td>
+                                    </tr>
+                                    <!-- <tr>
+                                        <th>
+                                            <div class="tit">참조링크</div>
+                                        </th>
+                                        <td>
+                                            <ul class="add_list">
+                                                <li class="dp_flex">
+                                                    <div class="link_input">
+                                                        <input type="text" title="참조링크를 입력해주세요.">
+                                                    </div>
+                                                    <div class="add_btn plus_link">
+                                                        <a href="#none"><span class="ir_pm">링크 추가</span></a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr> -->
+                                    <% if(rsFileList.size() > 0 & !act.equals("reply")){	// 첨부파일 있을경우 시작 %>
+                                    <tr>
+                                        <th style="vertical-align: top;padding-top: 15px;">첨부파일</th>
+                                        <td>
+                                            <ul class="add_list">
+                                                <li class="dp_flex f_v_c">
+                                                    <input type="file" name="filename0" class="att_file">
+                                                    <button type="button" class="add_file">+</button>
+                                                </li>
+                                            </ul>
+                                            <div class="addFile_notice">
+                                                <ul>
+                                                    <li>첨부파일은 최대 5개까지 추가 가능합니다. <span>(총 용량 100MB)</span></li>
+                                                    <li>용량이 큰 파일은 <span>메일 (shkim@neoitc.co.kr)</span>로 발송 후 고객센터로 전화해주세요.</li>
+                                                    <li>파일명에 특수문자를 빼고 올려주세요. 특수문자가 포함되면 파일다운로드가 불가능합니다.</li>
                                                 </ul>
-                                                <div class="addFile_notice short_list">
-                                                    <ul>
-                                                        <li>첨부파일은 최대 5개까지 추가 가능합니다. <span>(총 용량 100MB)</span></li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div class="btn_box t_a_r">
-                                    <a class="del" href="/repair.do?b_code=<%=b_code%>&list_no=<%=list_no%>" onclick="history.back(); return false;">취소</a>
-		                            <a class="modify" href="#none" onclick="ins('reply'); return false;">수정</a>
-                                </div>
-                            </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="btn_box t_a_r">
+                                <% if(!act.equals("reply") & list_no.equals("")){ %>
+                                    <input type="submit" class="save" value="등록" onclick="ins('ins'); return false;" />
+                                <% }else if(!act.equals("reply") & !list_no.equals("")){ %>
+                                    <input  type="submit" class="btn btnR btn_navy" value="수정" onclick="ins('upt'); return false;" />
+                                <% }else if(act.equals("reply")){ %>
+                                    <input type="image" src="/source/repair/skin/<%=b_skin%>/btn_write.gif" alt="수정" onclick="ins('reply'); return false;" />
+                                <% } %>
+                                <a  class="btn btnR btn_w" href="/repair.do?b_code=<%=b_code%>">취소</a>
+                                <a  class="back" href="/repair.do?b_code=<%=b_code%>">목록</a>
+                            </div>
                         </div>
                     </div>
                 </div>

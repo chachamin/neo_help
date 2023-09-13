@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네오(NEO) 헬프데스크</title>
+
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="css/board.css" />
+    <link rel="stylesheet" type="text/css" href="css/rspnsv.css" />
+    <link rel="stylesheet" type="text/css" href="css/font.css" />
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+</head>
+
+<body>
+    <div id="skip_navi">
+        <a href="#container">본문 바로가기</a>
+        <a href="#navi">주메뉴 바로가기</a>
+    </div>
+
+    <div class="wrapper"">
+        <header id="herader">
+            <div class="head_wrap">
+                <div class="inner">
+                    <h1 class="img_logo">
+                        <a href="#none">
+                            <div class="neo_logo">
+                                <img src="images/neo_logo_w.png" alt="NEO New E-information Organization">
+                            </div>
+                        </a>
+                    </h1>
+                    <div class="text_logo">
+                        <a href="#none">
+                            <p class="typo">HELP DESK</p>
+                        </a>
+                    </div>
+                    <div id="gnb" class="menu_r">
+                        <h2 id="navi" class="sound_only">네오 헬프테스크 주메뉴</h2>
+                        <ul class="dp_flex">
+                            <li class="round">
+                                <a href="#none" class="join">
+                                    <span class="ir_pm">회원정보수정</span>
+                                </a>
+                            </li>
+                            <li class="round">
+                                <a href="#none" class="sign_out">
+                                    <span class="ir_pm">로그아웃</span>
+                                </a>
+                            </li>
+                            <!-- <li class="round">
+                                <a href="#none" class="sign_in">
+                                    <span class="ir_pm">로그인</span>
+                                </a>
+                            </li> -->
+                            <li class="round_box">
+                                <a href="#none" class="register">
+                                    <p>유지보수 등록하기</p>
+                                    <img src="/images/write_ico.png">
+                                </a>
+                            </li>
+                            <!-- <li class="round_box">
+                                <a href="#none" class="statistics">
+                                    <p>유지보수 통계</p>
+                                    <img src="/images/graph.png">
+                                </a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="container">
+            <div class="sub_container">
+                <div class="pg_title_area">
+                    <div class="inner">
+                        <div class="tit_wrap">
+                            <div class="tit_box">
+                                <div class="typo eng_t">
+                                    <p><span class="add_tDot">Maintenance</span></p>
+                                </div>
+                                <div class="tit"><span>영산강홍수통제소</span> 유지보수 현황</div>
+                            </div>
+                            <div class="step_box state_list">
+                                <ul>
+                                    <li><a href="#none">전체 <span>1500</span></a></li>
+                                    <li><a href="#">접수중 <span class="step_1">4</span></a></li>
+                                    <li><a href="#">처리중 <span class="step_2">3</span></a></li>
+                                    <li><a href="#">처리완료 <span class="step_3">1489</span></a></li>
+                                    <li><a href="#">반영불가 <span class="step_4">4</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inner">
+                    <div class="bo_view_wrap">
+                        <div class="content_notice red_l">진행 또는 완료 상태인 게시물은 수정/삭제가 되지 않습니다.</div>
+                        <div class="bo_view_box">
+                            <div class="bo_view">
+                                <div class="request">
+                                    <form name="vewForm" method="post" action="">
+                                        <input type="hidden" name="b_code" value="<%=b_code%>" />
+                                        <input type="hidden" name="list_no" value="<%=list_no%>" />
+                                        <input type="hidden" name="ref_no" value="<%=ref_no%>" />
+                                        <input type="hidden" name="gubunInsUpt" value="" />
+                                        <input type="hidden" name="srhName" value="/repair.vew?b_code=<%=b_code%>&amp;list_no=<%=list_no%>&amp;category=<%=category%>" />
+                                    </form>
+                                    <div class="bo_view_head">
+                                        <div class="process">
+                                            <span class="step_<%=state%>"><%=vo.getCode_nm()%></span>
+                                        </div>
+                                        <div class="tit"><%=title%></div>
+                                        <div class="writer">
+                                            <ul class="dp_flex">
+                                                <li>신청기관 <span><%=memVO.getM_nick() == null ? "" : memVO.getM_nick()%></span></li>
+                                                <li>요청구분 <span><%=r_part_nm%></span></li>
+                                                <li>신청일 <span><%=vo.getRegdate()%></span></li>
+                                                <li>작성자 <span><%=vo.getT_name()%></span></li>
+                                            </ul>
+                                        </div>
+                                        <div class="company_info">
+                                            <ul class="dp_flex f_v_c">
+                                                <li>
+                                                    <span>담당자</span>
+                                                    <span><%=tNmae%></span>
+                                                </li>
+                                                <li>
+                                                    <span>연락처</span>
+                                                    <span><%=memVO.getM_tel1() == null ? "" : memVO.getM_tel1()%></span>
+                                                </li>
+                                                <li>
+                                                    <span>팩스</span>
+                                                    <span><%=memVO.getM_tel2() == null ? "" : memVO.getM_tel2()%></span>
+                                                </li>
+                                                <li class="dp_flex">
+                                                    <span>홈페이지</span>
+                                                    <a href="<%=memVO.getM_domain() == null ? "" : memVO.getM_domain()%>" target="_blank" class="dp_flex f_v_c"target="_blank" title="새창"><%=memVO.getM_domain() == null ? "" : memVO.getM_domain()%> <img src="/images/ico_blank_b.png">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="bo_view_body">
+                                        <%=nl2br(setResultHtml(content))%>
+                                    </div>
+                                    <div class="add_file">
+                                        <%
+                                            for(int i = 0 ; i < fileList.size() ; i++){
+                                                RepairVO voFile = (RepairVO)fileList.get(i);
+                                                String file_name = voFile.getFile_name() == null ? "" : voFile.getFile_name();
+                                        %> 
+                                        <a href="/fileDownload.do?filename=<%=java.net.URLEncoder.encode(file_name, "UTF-8")%>&amp;f_path=repair&amp;b_code=<%=b_code%>" title="<%=file_name%> 첨부파일 다운로드"><%=file_name%></a>
+                                        <% } %>
+                                    </div>
+                                </div>
+                                <!-- <div class="process_notice">
+                                    <img>
+                                    <p>진행 또는 완료 상태인 게시물은 수정/삭제가 되지 않습니다.</p>
+                                </div> -->
+                                <div class="result">
+                                    <div class="res_head">
+                                        <div class="tit">신청업무 진행상황</div>
+                                        <div class="company_info">
+                                            <ul class="dp_flex f_v_c">
+                                                <li><span>진행현황</span> <span class="step_<%=state%>"><%=vo.getCode_nm()%></span></li>
+                                                <li><span>요청구분</span><%=r_part_nm%></li>
+                                                <li><span>담당자</span><%=vo.getM_name()%></li>
+                                                <li><span>진행·완료일</span> <span class="red_l"><%=vo.getEnddate() == null ? "" : vo.getEnddate()%></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="res_body">
+                                        <%=nl2br(setResultHtml(cont))%>
+                                    </div>
+                                    <div class="add_file">
+                                        <%
+                                            for(int i = 0 ; i < replyFileList.size() ; i++){
+                                                RepairVO voFile = (RepairVO)replyFileList.get(i);
+                                                String file_name = voFile.getFile_name() == null ? "" : voFile.getFile_name();
+                                        %> 
+                                        <a href="/fileDownload.do?filename=<%=java.net.URLEncoder.encode(file_name, "UTF-8")%>&amp;f_path=repair&amp;b_code=<%=b_code%>" title="<%=file_name%> 첨부파일 다운로드"><%=file_name%></a>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn_box t_a_r">
+                                <% if(state.equals("A")){ %>
+                                    <%@include file="repair_btn_modify.jsp"%>
+                                    <%@include file="repair_btn_delete.jsp"%>
+                                    <% } %>
+                                    <a class="btn" href="/repair.do?b_code=<%=b_code%>&amp;nPage=<%=nPage%><% if(!category.equals("")){ %>&amp;category=<%=category%><% } %>">목록</a>
+                                    <% if(login_userGrade.equals("A00")){ %><%@include file="repair_btn_reply.jsp"%><% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer id="footer">
+            <div class="inner">
+                <div class="dp_flex footer_wrap">
+                    <div class="fbox_left">
+                        <div class="neo_info">
+                            <div class="flogo">
+                                <img src="images/flogo_c.png" alt="NEO New E-information Organization">
+                            </div>
+                            <div class="address">
+                                <p>광주광역시 서구 하남대로 698(동천동 627번지) 일군타워 7층 701호 (우편번호 61903)</p>
+                                <ul>
+                                    <li><a href="#none">대표전화 062-522-0234</a></li>
+                                    <li>팩스 062-522-0238</li>
+                                    <li>사업자등록번호 243-07-00246</li>
+                                </ul>
+                                <ul class="mtb30">
+                                    <li><a href="#none">개인정보처리방침</a></li>
+                                    <li><a href="#none">이메일주소무단수집거부</a></li>
+                                    <li><a href="#none">회사소개</a></li>
+                                    <li><a href="#none">오시는길</a></li>
+                                </ul>
+                                <p class="blue_l">copyright @ NEO. all rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fbox_right dp_flex">
+                        <div class="user_link">
+                            <p class="f_tit">For User</p>
+                            <ul>
+                                <li><a href="#" target="_blank" title="새창열기" class="btn">포트확인<span class="ico_blank_b"></span></a></li>
+                                <li><a href="#" target="_blank" title="새창열기" class="btn">통합진단클리닉<span class="ico_blank_b"></span></a></li>
+                                <li><a href="#" target="_blank" title="새창열기" class="btn">W3C<span class="ico_blank_b"></span></a></li>
+                                <li><a href="#" target="_blank" title="새창열기" class="btn">표준약관양식<span class="ico_blank_b"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="contact">
+                            <p class="f_tit">Contact Us</p>
+                            <p class="blue_l">shkim@neoitc.co.kr</p>
+                            <p class="blue_l mt16">062-522-0234</p>
+                            <p>평일 09:00 ~ 18:00 (주말·공휴일 휴무)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

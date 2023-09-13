@@ -37,30 +37,37 @@
             </div>
             <div class="right_box">
                 <div class="login_box">
-                    <div class="tit_box">
-                        <div class="typo">비밀번호 찾기</div>
-                        <div>가입하신 아이디, 성명, 연락처 정보로 비밀번호를 찾습니다.</div>
-                    </div>
-                    <div class="form_box">
-                        <div class="pw_result">
-                            <p class="mb4">회원정보가 확인되었습니다.</p>
-                            <p class="blue_l">비밀번호를 초기화 하시겠습니까?</p>
-                            <div class="notice">
-                                <p><span class="noti_ico">비밀번호 초기화 시 <span class="fb2 red_l">아이디와 동일하게 변경</span>됩니다.</span></p>
+                    <form name="srhForm" method="post" action="/member.do">
+                        <input type="hidden" name="S" value="<%=S%>" />
+                        <input type="hidden" name="M" value="<%=M%>" />
+                        <input type="hidden" name="b_code" value="<%=b_code%>" />
+                        <input type="hidden" name="nPage" value="1" />
+                        <div class="tit_box">
+                            <div class="typo">비밀번호 찾기</div>
+                            <div>가입하신 아이디, 성명, 연락처 정보로 비밀번호를 찾습니다.</div>
+                        </div>
+                        <div class="form_box">
+                            <div class="pw_result">
+                                <p class="mb4">회원정보가 확인되었습니다.</p>
+                                <p class="blue_l">비밀번호를 초기화 하시겠습니까?</p>
+                                <div class="notice">
+                                    <p><span class="noti_ico">비밀번호 초기화 시 <span class="fb2 red_l">아이디와 동일하게 변경</span>됩니다.</span></p>
+                                </div>
+                            </div>
+                            <div class="btn_wrap">
+                                <a href="/member.do?m_id=<%=mId%>&amp;act=passwd_reset" class="bg_blue" onclick="pw_reset('<%=mId%>'); return false;">비밀번호 초기화</a>
                             </div>
                         </div>
-                        <div class="btn_wrap">
-                            <button type="submit" class="bg_blue" onClick="location.href='find_pw_change.html'">비밀번호 초기화</button>
-                        </div>
-                    </div>
+                    </form>
+
                     <div class="sign_wrap">
                         <div class="join">
-                            <a href="join.html">회원가입</a>
+                            <a href="/member.do?act=agree&gubun=member">회원가입</a>
                         </div>
                         <div class="find_box">
                             <ul>
-                                <li><a href="find_id.html">아이디찾기</a></li>
-                                <li><a href="find_pw.html">비밀번호 찾기</a></li>
+                                <li><a href="/member.do?b_code=&act=idFind">아이디찾기</a></li>
+                                <li><a href="/member.do?b_code=&act=pwFind">비밀번호 찾기</a></li>
                             </ul>
                         </div>
                     </div>

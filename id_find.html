@@ -1,0 +1,143 @@
+<jsp:include page="/include/header.jsp" />
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.util.*" %>
+<%@ page import="com.kisc.member.MemberVO" %>
+<%
+	// 천단위 구분
+	String format = "###,###,###,###";
+	java.text.DecimalFormat df = new java.text.DecimalFormat(format);
+
+	String S = request.getParameter("S") == null ? "" : request.getParameter("S");
+	String M = request.getParameter("M") == null ? "" : request.getParameter("M");
+	String b_code = request.getParameter("b_code") == null ? "" : request.getParameter("b_code");
+	String cg = request.getParameter("category") == null ? "" : request.getParameter("category");
+	String satisfy_yn = request.getParameter("satisfy_yn") == null ? "Y" : request.getParameter("satisfy_yn");
+
+	int nPage     = 1;			// 현재 페이지
+	int totalPage = 0;			// 전체 페이지 수
+	int pageList  = 10;			// 페이지 출력
+	int	startPage = 1;			// 시작 페이지
+	int endPage   = 1;			// 끝 페이지
+%><%@ include file="member_type_t.jsp" %>
+<%@ include file="../config/config.jsp" %>
+
+<%
+
+	MemberVO getMemberAuthCheck = (MemberVO)request.getAttribute("getMemberAuthCheck");	// 운영자 권한 체크
+	boolean memberAuthCheck = getMemberAuthCheck == null ? false : true;
+
+%>
+<script type="text/javascript">
+	function del(arg){
+		var fm = document.srhForm;
+		if(confirm("담당자를 삭제하시겠습니까?\n\n* 삭제후 복원은 불가능합니다")){
+			fm.action = "/member.do?act=del&m_id="+arg;
+			fm.submit();
+		}
+	}
+	function pw_reset(arg){
+		var fm = document.srhForm;
+		if(confirm("비밀번호를 초기화 하시겠습니까?\n\n* 아이디와 동일하게 셋팅됩니다.")){
+			fm.action = "/member.do?act=passwd_reset&m_id="+arg;
+			fm.submit();
+		}
+	}
+	
+	
+	 $(function() {
+	        //idck 버튼을 클릭했을 때 
+	        $("#idck").click(function() {            
+	            //userid 를 param.
+	            var m_name =  $("#m_name").val(); 
+	            var m_tel1 =  $("#m_tel1").val(); 
+	            
+	            if(m_name == ""){            	
+	            	 alert("가입하신 아이디를 입력해주세요.");
+	            	 $("#m_name").focus();    
+	            }else if(m_tel1 == ""){
+	            	 alert("가입하신 연락처를 입력해주세요.");
+	            	 $("#m_tel1").focus();   
+	            }else{
+	            	
+	            var param = {
+	       			 'm_name': m_name,
+	       			 'm_tel1': m_tel1,
+	       			 'act' : 'idSearch'
+	       		};
+	            
+	            $.ajax({
+	                async: true,
+	                type : 'POST',
+	                url : "/member.do?act=idSearch" ,
+	                dataType : "json",
+	                data: param,
+	                
+	                success : function(data) {
+	                    if (data.rCount > 0) {                      
+	                        $("#idResult").html("<p class='find_result'>고객님의 ID는 <span class='blue'>"+data.mId+"</span> 입니다.</p>");
+	                        $(".btn_wrap").html("<a class='btn btnL btn_navy w100 t_a_c' style='font-size:18px' href='/'>로그인</a>");
+	                    } else {
+	                         $("#idResult").html("<p class='find_result'>가입 정보와 일치한 내역이 없습니다.<br>회원이 아니시면 회원가입 후 이용해주세요.</p>");
+							 // $("#idResult1").html("");
+	                    }
+	                },
+	                error : function(error) {
+	                    alert("error : " + error);
+	                }
+	            });
+
+	            }
+	        });
+	    });
+</script>
+</head>
+<body>
+
+    <div class="fade">
+		<div class="login_box">
+			<form name="srhForm" method="post" action="/member.do?S=<%=S%>&amp;M=<%=M%>&amp;b_code=<%=b_code%>">
+				<input type="hidden" name="S" value="<%=S%>" />
+				<input type="hidden" name="M" value="<%=M%>" />
+				<input type="hidden" name="b_code" value="<%=b_code%>" />
+				<input type="hidden" name="nPage" value="1" />
+				<div class="tit_box">
+					<div class="typo">아이디 찾기</div>
+					<div>가입하신 성명과 연락처 정보로 아이디를 찾습니다.</div>
+				</div>
+				<div class="form_box">
+					<form name="login" method="post" action="/member.do?act=idFind">
+						<input type="hidden" name="returnURL" value="/">
+						<div class="input_wrap input_name">
+							<input type="text" id="name" name="m_name" maxlength="41" title="아이디" class="" value="" maxlength="80" accesskey="L" placeholder="성명을 입력하세요.">
+						</div>
+						<div class="input_wrap input_pNum">
+							<input type="text" id="m_tel1" name="m_tel1" title="가입하신 연락처를 입력하세요." placeholder="- 를 포함한 연락처를 입력하세요.">
+						</div>
+						<div id="idResult"></div>
+						<div class="btn_wrap">
+							<input class="btn btnL btn_navy" type="button" id="idck" value="아이디찾기" />
+						</div>
+					</form>
+				</div>
+			</form>
+			<div class="sign_wrap">
+				<div class="join">
+					<a href="/member.do?act=agree&gubun=member">회원가입</a>
+				</div>
+				<div class="find_box">
+					<ul>
+						<li><a href="/member.do?b_code=&act=idFind&gubun=member">아이디찾기</a></li>
+						<li><a href="/member.do?b_code=&act=pwFind&gubun=member">비밀번호 찾기</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="contact_ico"></div>
+		</div>
+		<div class="aside">
+			<ul class="link_list">
+				<li><a href="#none">개인정보처리방침</a></li>
+				<li><a href="#none">이메일무단수집거부</a></li>
+			</ul>
+			<div class="copy">COPYRIGHT @ NEO. ALL RIGHTS RESERVED.</div>
+		</div>
+	</div>

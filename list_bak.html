@@ -104,117 +104,159 @@
                             <div class="notice fl">
                                 <p>업무의 신속성이 기하는 유지보수 업무는 담당자에게 직접 연락<span class="bk">부탁드립니다.</span></p>
                             </div>
-                            <div class="search_form dp_flex fr">
-                                <select name="keyField" id="select" title="검색구분 선택" class="empty_bak">
-                                    <option value="" selected="select">전체검색</option>
-                                    <option value="TITLE" >제목</option>
-                                    <option value="CONTENT" >내용</option>
-                                    <option value="M_NAME">작성자</option>
-                                </select>
-                                <div class="search_input_wrap">
-                                    <input name="keyWord" value type="test" placeholder="검색어를 입력하세요" title="검색할 내용을 입력하세요" class="empty_bak">
-                                    <button type="submit" class="btn_search empty_bak">검색</button>
-                                </div>
+                            <div class="search_form fr">
+                                <form name="srhForm" method="post" action="/repair.do?b_code=<%=b_code%>" class="dp_flex">
+                                    <select name="state" id="select" title="검색구분 선택" class="empty_bak">
+                                        <option value="">전체검색</option>
+                                        <%
+                                            List cgList = (List)request.getAttribute("repairCategory");
+                                            for(int i = 0 ; i < cgList.size() ; i++){
+                                                RepairVO cgVO = (RepairVO)cgList.get(i);
+                                        %>
+                                        <option value="<%=cgVO.getCode_cd()%>"<% if(cgVO.getCode_cd().equals(keyState)){ %> selected="selected"<% } %>><%=cgVO.getCode_nm()%></option>
+                                        <%
+                                            }
+                                        %>
+                                        <option value="COMPANY">신청기관</option>
+                                    </select>
+                                    <div class="search_input_wrap">
+                                        <input type="text" name="keyWord" id="qt_d" placeholder="검색어를 입력하세요" title="검색할 내용을 입력하세요" class="empty_bak">
+                                        <button type="submit" class="btn_search empty_bak" value="검색">검색</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                         <div class="bo_list">
                             <ul class="box_type col_1">
+                                <%
+                                    if(totalCount > 0){
+                                    List repairList = (List)request.getAttribute("repairList");	// (b_code) 게시물 목록
+                                    for(int i = 0 ; i < repairList.size() ; i++){
+                                        RepairVO vo = (RepairVO)repairList.get(i);
+                                        int list_no    = vo.getList_no();
+                                        int ref_no     = vo.getRef_no();
+                                        String m_id   = vo.getM_id() == null ? "" : vo.getM_id();
+                                        String title   = vo.getTitle() == null ? "" : vo.getTitle();
+                                        String regdate = vo.getRegdate() == null ? "" : vo.getRegdate();
+                                        String company = vo.getCompany() == null ? "" : vo.getCompany();
+                                        int hit        = vo.getHit();
+                                        String state   = vo.getState() == null ? "A" : vo.getState();
+                                        String code_nm = vo.getCode_nm() == null ? "" : vo.getCode_nm();
+                                        String file_name = vo.getFile_name() == null ? "" : vo.getFile_name();
+                                        String r_part = vo.getR_part() == null ? "" : vo.getR_part();
+                                        String r_part_nm = "";
+                                        String s_state = "";
+                                        if(r_part.equals("D")){
+                                            r_part_nm = "디자인";
+                                        }else if(r_part.equals("P")){
+                                            r_part_nm = "프로그램";
+                                        }else if(r_part.equals("Y")){
+                                            r_part_nm = "영업";
+                                        }else{
+                                            r_part_nm = "전체";
+                                        }
+
+                                        if(state.equals("1")){
+                                            s_state = "접수중";
+                                        }else if(state.equals("2")){
+                                            s_state = "처리중";
+                                        }else if(state.equals("3")){
+                                            s_state = "처리완료";
+                                        }else{
+                                            s_state = "반영불가";
+                                        }
+                                %>
                                 <li>
-                                    <div class="list_num">1500</div>
+                                    <div class="list_num"><%=cList--%></div>
                                     <div class="cont">
                                         <div class="tit_box dp_flex f_h_v f_v_c">
                                             <div class="tit">
-                                                <a href="view.html">영산강 홍수통제소 요청사항</a>
+                                                <%-- if(list_no != ref_no){ %><img src="/source/repair/skin/<%=b_skin%>/ico_reply.gif" alt="진행상황" /><% } --%> 
+                                                <a href="/repair.do?b_code=<%=b_code%>&amp;act=view&amp;list_no=<%=list_no%>&amp;nPage=<%=nPage%>"><%=title%></a>
+                                                <%
+                                                if(b_new.equals("Y") && state.equals("A")){
+                                                    if(regdate.substring(0,10).equals(dateNowYear+"."+dateNowMonth+"."+dateNowDay)){
+                                                        out.println("<span class='btn_new'>new</span>");
+                                                    }
+                                                }
+                                                %>
                                             </div>
                                             <div class="process">
-                                                <span class="step_1">접수중</span>
+                                                <span class="step_<%=state%>"><%=s_state%></span>
                                             </div>
                                         </div>
                                         <div class="info_box">
                                             <ul class="ulfl">
-                                                <li>신청기관 <span>영산강홍수통제소</span></li>
-                                                <li>요청구분 <span>디자인</span></li>
-                                                <li>신청일 <span>2023-07-26</span></li>
+                                                <li>신청기관 <span><%=company%></span></li>
+                                                <li>요청구분 <span><%=r_part_nm%></span></li>
+                                                <li>신청일 <span><%=regdate%></span></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </li>
+                                <%
+                                }
+                                }else{
+                                %>
                                 <li>
-                                    <div class="list_num">1500</div>
-                                    <div class="cont">
-                                        <div class="tit_box dp_flex f_h_v f_v_c">
-                                            <div class="tit">
-                                                <a href="#">영산강 홍수통제소 요청사항</a>
-                                            </div>
-                                            <div class="process">
-                                                <span class="step_2">처리중</span>
-                                            </div>
-                                        </div>
-                                        <div class="info_box">
-                                            <ul class="ulfl">
-                                                <li>신청기관 <span>영산강홍수통제소</span></li>
-                                                <li>요청구분 <span>디자인</span></li>
-                                                <li>신청일 <span>2023-07-26</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    <p>해당 내용이 없습니다.</p>
                                 </li>
-                                <li>
-                                    <div class="list_num">1500</div>
-                                    <div class="cont">
-                                        <div class="tit_box dp_flex f_h_v f_v_c">
-                                            <div class="tit">
-                                                <a href="#">영산강 홍수통제소 요청사항</a>
-                                            </div>
-                                            <div class="process">
-                                                <span class="step_3">처리완료</span>
-                                            </div>
-                                        </div>
-                                        <div class="info_box">
-                                            <ul class="ulfl">
-                                                <li>신청기관 <span>영산강홍수통제소</span></li>
-                                                <li>요청구분 <span>디자인</span></li>
-                                                <li>신청일 <span>2023-07-26</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="list_num">1500</div>
-                                    <div class="cont">
-                                        <div class="tit_box dp_flex f_h_v f_v_c">
-                                            <div class="tit">
-                                                <a href="#">영산강 홍수통제소 요청사항</a>
-                                            </div>
-                                            <div class="process">
-                                                <span class="step_4">반영불가</span>
-                                            </div>
-                                        </div>
-                                        <div class="info_box">
-                                            <ul class="ulfl">
-                                                <li>신청기관 <span>영산강홍수통제소</span></li>
-                                                <li>요청구분 <span>디자인</span></li>
-                                                <li>신청일 <span>2023-07-26</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
+                                <%
+                                }
+                                %>
                             </ul>
                         </div>
                         <div class="btn_box t_a_r">
-                            <a href="reqForm.html" class="write">유지보수 등록하기</a>
+                            <%@include file="repair_btn_write.jsp"%>
                         </div>
                         <div class="pagination">
-                            <ul>
-                                <li><a href="#none" class="pg_ico first" title="처음페이지"></a></li>
-                                <li><a href="#none" class="pg_ico prev" title="이전페이지"></a></li>
-                                <li><a href="#none" class="active">1</a></li>
-                                <li><a href="#none">2</a></li>
-                                <li><a href="#none" class="pg_ico next" title="다음페이지"></a></li>
-                                <li><a href="#none" class="pg_ico last" title="마지막페이지"></a></li>
-
-                            </ul>
+                            <%@include file="page_skip.jsp"%>
                         </div>
+                        <!-- <div class="pagination">
+                            <ul>
+                                <%
+                                    if(nPage > 1){
+                                        int nPage2 = nPage-10;
+                                        if(nPage2 > 1){ nPage2 = nPage2;
+                                        }else{ nPage2 = 1; }
+                                %>
+                                <li>
+                                    <a href="/repair.do?b_code=<%=b_code%>&amp;nPage=1&amp;state=<%=keyState%>&amp;keyField=<%=keyField%>&amp;keyWord=<%=keyWord%>" class="pg_ico first" title="처음페이지"></a>
+                                </li>
+                                <li>
+                                    <a href="/repair.do?b_code=<%=b_code%>&amp;nPage=<%=nPage2%>&amp;state=<%=keyState%>&amp;keyField=<%=keyField%>&amp;keyWord=<%=keyWord%>" class="pg_ico prev" title="이전페이지"></a>
+                                </li>
+                                <% } %>
+                                <%
+                                int bar = 0;
+                                for(int i = startPage ; i <= endPage ; i++){
+                                    bar++;
+                                    if(i == nPage){
+                                        %>  <li>
+                                                <a href="#none" class="active"><%=i%></a>
+                                            </li><%
+                                        }else{
+                                            %>  <li>
+                                                    <a href="/repair.do?b_code=<%=b_code%>&amp;nPage=<%=i%>&amp;state=<%=keyState%>&amp;keyField=<%=keyField%>&amp;keyWord=<%=keyWord%>"><%=i%></a>
+                                                </li><%
+                                            }
+                                        }
+                                    %>
+                                    <%
+                                        if(nPage < totalPage){
+                                            int nPage2 = nPage+10;
+                                            if(nPage2 < totalPage){ nPage2 = nPage2;
+                                            }else{ nPage2 = totalPage; }
+                                    %>
+                                <li>
+                                    <a href="/repair.do?b_code=<%=b_code%>&amp;nPage=<%=nPage2%>&amp;state=<%=keyState%>&amp;keyField=<%=keyField%>&amp;keyWord=<%=keyWord%>" class="pg_ico next" title="다음페이지"></a>
+                                </li>
+                                <li>
+                                    <a href="/repair.do?b_code=<%=b_code%>&amp;nPage=<%=totalPage%>&amp;state=<%=keyState%>&amp;keyField=<%=keyField%>&amp;keyWord=<%=keyWord%>" class="pg_ico last" title="마지막페이지"></a>
+                                </li>
+                                <% } %>
+                            </ul>
+                        </div> -->
                     </div>
                 </div>
             </div>
